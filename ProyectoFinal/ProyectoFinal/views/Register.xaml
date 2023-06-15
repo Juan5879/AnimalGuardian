@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.Register">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="geckonaranja.jpg" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill" />
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.4" AbsoluteLayout.LayoutFlags="All" Padding="9" BackgroundColor="#B3000000">
+                <Label Text="Iniciar Sesion" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Entry x:Name="user" Placeholder="Usuario"/>
+                <Entry x:Name="email" Placeholder="Correo electronico"/>
+                <Entry x:Name="password" Placeholder="Contraseña" IsPassword="True"/>
+                <Entry x:Name="passwordrepeat" Placeholder="Repetir contraseña" IsPassword="True"/>
+                <Button x:Name="btn_sendata" Text="Registrarse" Clicked="Btn_sendata"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
