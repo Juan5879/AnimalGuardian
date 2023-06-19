@@ -12,7 +12,7 @@ namespace ProyectoFinal
         {
             InitializeComponent();
             //hace de Login la nueva pestaña de inicio, es la que se mostrará al iniciar la aplicación.
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

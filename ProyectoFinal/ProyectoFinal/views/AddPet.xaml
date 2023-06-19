@@ -16,7 +16,9 @@
                 </Picker.ItemsSource>
             </Picker>
             <Entry x:Name="animalNotes" Placeholder="Notas"/>
-            <Button x:Name="btn_savePet" Text="Agregar al recinto!" Clicked="btn_savePet"/>
+            <!--
+            <Button x:Name="Btn_SavePet" Text="Agregar al recinto!" Clicked="Btn_SavePet"/>
+            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

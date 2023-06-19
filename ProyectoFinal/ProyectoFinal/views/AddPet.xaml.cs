@@ -20,9 +20,11 @@ namespace ProyectoFinal.views
         {
             var selectedOption = animalType.SelectedItem as String;
         }
-        private async void btn_savePet(object sender, EventArgs e)
+        /*
+        private async void Btn_SavePet(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }
+        */
     }
 }

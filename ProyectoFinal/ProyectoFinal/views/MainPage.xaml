@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoFinal.views.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:d="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:ProyectoFinal.views"
+            mc:Ignorable="d"
+            x:Class="ProyectoFinal.views.MainPage"
+            BarTextColor="Black"
+            BarBackgroundColor="#157545"
+            SelectedTabColor="Black"
+            UnselectedTabColor="White">
+    
+    <local:AddPage Title="AddPage"/>
+    <local:enclosurePet Title="Recinto"/>
+    <local:animal Title="Animales"/>
+</TabbedPage>

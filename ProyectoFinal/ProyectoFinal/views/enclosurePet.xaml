@@ -2,20 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.enclosurePet">
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="animalsview">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Button x:Name="btn_nav_pet" Clicked="btn_nav_pet" Text="{Binding animal}"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Button x:Name="btn_nav_addPet" Text="Agregar Mascota" Clicked="btn_nav_addPet"/>
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Label Text="Enclosure Menu" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+    </StackLayout>
 </ContentPage>
