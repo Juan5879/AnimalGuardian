@@ -10,8 +10,10 @@
             BarBackgroundColor="#157545"
             SelectedTabColor="Black"
             UnselectedTabColor="White">
-    
-    <local:AddPage Title="AddPage"/>
-    <local:enclosurePet Title="Recinto"/>
+
+    <local:AddPage Title="Foro"/>
     <local:animal Title="Animales"/>
+    <local:enclosurePet Title="Recinto"/>
+    <local:notification Title="Notificaciones"/>
+    <local:user Title="Usuario"/>
 </TabbedPage>

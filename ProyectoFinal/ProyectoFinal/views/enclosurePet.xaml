@@ -3,6 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.enclosurePet">
     <StackLayout>
-        <Label Text="Enclosure Menu" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <StackLayout BackgroundColor="#008800"
+                     TranslationY="10">
+            <ContentView BackgroundColor="Transparent"
+                         Padding="10"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <StackLayout>
+                    <Image Source="icono.png"
+                           HorizontalOptions="Center" />
+                    <Label Text="Texto del botón"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+            </ContentView>
+        </StackLayout>
+        <Button BackgroundColor="#880000"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="0, -42.5, 0, 0"/>
     </StackLayout>
 </ContentPage>
