@@ -24,3 +24,5 @@ namespace ProyectoFinal.views
         }
     }
 }
+
+                          /*｡*ﾟ.*.｡(っ ᐛ )っ PAN*/

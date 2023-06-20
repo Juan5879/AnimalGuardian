@@ -2,25 +2,97 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.enclosurePet">
-    <StackLayout>
-        <StackLayout BackgroundColor="#008800"
-                     TranslationY="10">
-            <ContentView BackgroundColor="Transparent"
-                         Padding="10"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center">
-                <StackLayout>
-                    <Image Source="icono.png"
-                           HorizontalOptions="Center" />
-                    <Label Text="Texto del botón"
-                           HorizontalOptions="Center" />
-                </StackLayout>
-            </ContentView>
+    <RelativeLayout>
+        <ListView x:Name="petList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout BackgroundColor="Transparent">
+                            <Frame BackgroundColor="#008800"
+                                   Margin="10, 8, 10, -55"
+                                   CornerRadius="8">
+                                <ContentView BackgroundColor="Transparent">
+                                    <StackLayout>
+                                        <ContentView HorizontalOptions="StartAndExpand">
+                                            <StackLayout BackgroundColor="Transparent">
+                                                <Frame BackgroundColor="White"
+                                                       CornerRadius="100"
+                                                       HeightRequest="100"
+                                                       WidthRequest="100"
+                                                       Scale="0.5"
+                                                       TranslationX="-50"
+                                                       TranslationY="-50">
+                                                    <Image Source="arana"
+                                                           Aspect="AspectFill"/>
+                                                </Frame>
+                                            </StackLayout>
+                                        </ContentView>
+                                        <StackLayout HorizontalOptions="StartAndExpand"
+                                                     Margin="50, -170, -10, 0">
+                                            <Frame BackgroundColor="Transparent">
+                                                <Label Text="Raul"
+                                                       FontSize="22"/>
+                                            </Frame>
+                                            <Frame BackgroundColor="Transparent"
+                                                   Margin="10, -45, 0, 0">
+                                                <Label Text="Es horrible pero lamentablemente existen las arañas..."
+                                                       FontSize="12"/>
+                                            </Frame>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ContentView>
+                            </Frame>
+                            <Button BackgroundColor="Transparent"
+                                    TextColor="White"
+                                    TranslationY="-45"
+                                    ScaleY="2.4"
+                                    Margin="10"/>
+                        </StackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout BackgroundColor="Transparent">
+            <Frame BackgroundColor="#008800"
+                   Margin="10, 8, -10, 0"
+                   CornerRadius="8">
+                <ContentView BackgroundColor="Transparent">
+                    <StackLayout>
+                        <ContentView HorizontalOptions="StartAndExpand"
+                                     BackgroundColor="Transparent">
+                            <StackLayout BackgroundColor="Transparent">
+                                <Frame BackgroundColor="Transparent"
+                                       CornerRadius="100"
+                                       HeightRequest="100"
+                                       WidthRequest="100"
+                                       Scale="0.5"
+                                       TranslationX="-10">
+                                    <Image Source="ts2"
+                                           Aspect="AspectFill"/>
+                                </Frame>
+                            </StackLayout>
+                        </ContentView>
+                        <StackLayout HorizontalOptions="FillAndExpand"
+                                     Margin="0, 0, 0, -60"
+                                     BackgroundColor="Transparent"
+                                     TranslationY="-110">
+                            <Frame BackgroundColor="Transparent"
+                                   Margin="0, 0, 0, 0">
+                                <Label Text="Agregar Mascota!"
+                                       HorizontalTextAlignment="Center"
+                                       FontSize="18"/>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </ContentView>
+            </Frame>
+            <Button BackgroundColor="Transparent"
+                    Padding="185, 85"
+                    TranslationX="10"
+                    TranslationY="-196"
+                    x:Name="btn_addPet"
+                    Clicked="btn_addPet_Clicked"/>
         </StackLayout>
-        <Button BackgroundColor="#880000"
-                TextColor="White"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Margin="0, -42.5, 0, 0"/>
-    </StackLayout>
+    </RelativeLayout>
 </ContentPage>
