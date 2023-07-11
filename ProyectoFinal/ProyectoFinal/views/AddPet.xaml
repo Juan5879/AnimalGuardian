@@ -6,6 +6,7 @@
         <StackLayout>
             <Label Text="Agrega al nuevo integrante" HorizontalOptions="Center"/>
             <Entry x:Name="petName" Placeholder="Nombre"/>
+            <!--
             <Picker x:Name="animalType" SelectedIndexChanged="OnPickerSelectionChanged">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -15,10 +16,9 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <Entry x:Name="animalNotes" Placeholder="Notas"/>
-            <!--
-            <Button x:Name="Btn_SavePet" Text="Agregar al recinto!" Clicked="Btn_SavePet"/>
             -->
+            <Entry x:Name="petNotes" Placeholder="Notas"/>
+            <Button x:Name="btn_SavePet" Text="Agregar al recinto!" Clicked="Btn_SavePet"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
