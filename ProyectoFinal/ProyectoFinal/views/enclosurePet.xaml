@@ -44,12 +44,13 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            
             <!--Botón para agregar mascotas-->
             <StackLayout>
                 <Frame BackgroundColor="#a08050"
                         CornerRadius="20">
                     <ContentView BackgroundColor="Transparent">
-                        <StackLayout>
+                        <Grid>
                             <Grid BackgroundColor="Transparent">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="110"/>
@@ -73,13 +74,11 @@
                                            HorizontalTextAlignment="Start"
                                            FontSize="18"/>
                                 </Frame>
-                                <Button x:Name="btn_addPet"
-                                        Clicked="btn_addPet_Clicked"
-                                        BackgroundColor="#80808080"
-                                        Grid.Column="0"
-                                        Grid.ColumnSpan="2"/>
                             </Grid>
-                        </StackLayout>
+                            <Button x:Name="btn_addPet"
+                                        Clicked="btn_addPet_Clicked"
+                                        BackgroundColor="#80808080"/>
+                        </Grid>
                     </ContentView>
                 </Frame>
             </StackLayout>

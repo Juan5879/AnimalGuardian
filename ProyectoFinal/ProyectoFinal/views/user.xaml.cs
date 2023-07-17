@@ -16,5 +16,20 @@ namespace ProyectoFinal.views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private async void btn_nav_config_Clicked(object sender, EventArgs e)
+        {
+			await Navigation.PushAsync(new AddPage());
+        }
+
+        private void btn_nav_contact_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_nav_closesion_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

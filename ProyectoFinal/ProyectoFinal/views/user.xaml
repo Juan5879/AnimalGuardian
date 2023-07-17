@@ -3,10 +3,150 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.user">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <!--Página de contenido general-->
+        <Grid Padding="10">
+            <!--Definicion del temaño de las filas y columnas dentro del grid-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/> <!--El * indica que el tamaño se ajusta solo según su contenido o las dimenciones de la pantalla.-->
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--Contenedor dentro del grid ocupando 2 de 4 columnas en la posicion de la 2da columna.-->
+            <StackLayout HorizontalOptions="Center" 
+                         Grid.ColumnSpan="2"
+                         Grid.Column="1">
+                <!--Frame que contiene la imagen del usuario.-->
+                <Frame
+                    CornerRadius="100"
+                    VerticalOptions="Start">
+                    <Image
+                        Source="usuario.png">
+                    </Image>
+                </Frame>
+                <!--Contenedor con datos del usuario.-->
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Usuario"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Descripción"
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+            <!--Contenedor de los botones que se ubica en la segunda fila y ocupa las 4 columnas de la página general.-->
+            <Grid Grid.Row="1"
+                  Grid.ColumnSpan="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!--Contenedor con los elementos del boton de Ajustes.-->
+                <!--Ocupando las 2 columnas del contenedor de botones y una fila del mismo.-->
+                <Grid BackgroundColor="#a08050"
+                             Grid.ColumnSpan="2"
+                             Grid.Row="0"
+                             Margin="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="Transparent">
+                        <Image Source="ts2.png">
+                        </Image>
+                    </Grid>
+                    <Label Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"
+                           Text="Configuración"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                    <Button BackgroundColor="Transparent"
+                            x:Name="btn_nav_config"
+                            Clicked="btn_nav_config_Clicked"
+                            Grid.ColumnSpan="2"
+                            Grid.RowSpan="2"/>
+                </Grid>
+
+                <!--Contenedor con los elementos del boton de "Contactarse"-->
+                <!--Ocupando 1 columna del contenedor de botones y una fila del mismo.-->
+                <Grid BackgroundColor="#a08050"
+                             Grid.Column="0"
+                             Grid.Row="1"
+                             Margin="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="Transparent">
+                        <Image Source="ts2.png">
+                        </Image>
+                    </Grid>
+                    <Label Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"
+                           Text="Contactarse"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                    <Button BackgroundColor="Transparent"
+                            x:Name="btn_nav_contact"
+                            Clicked="btn_nav_contact_Clicked"
+                            Grid.ColumnSpan="2"
+                            Grid.RowSpan="2"/>
+                </Grid>
+
+                <!--Contenedor con los elementos del boton de "Cerrar sesión.-->
+                <!--Ocupando 1 columna del contenedor de botones y una fila del mismo.-->
+                <Grid BackgroundColor="#a08050"
+                             Grid.Column="1"
+                             Grid.Row="1"
+                             Margin="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="Transparent">
+                        <Image Source="ts2.png">
+                        </Image>
+                    </Grid>
+                    <Label Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"
+                           Text="Cerrar Sesión"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="Black"/>
+                    <Button BackgroundColor="Transparent"
+                            x:Name="btn_nav_closesion"
+                            Clicked="btn_nav_closesion_Clicked"
+                            Grid.ColumnSpan="2"
+                            Grid.RowSpan="2"/>
+                </Grid>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
