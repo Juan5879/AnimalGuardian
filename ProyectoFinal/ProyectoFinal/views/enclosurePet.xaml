@@ -2,86 +2,49 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.enclosurePet">
-    <ScrollView>
-        <Grid Margin="10, 60, 10, 20"
-              BackgroundColor="#80808080">
-            <!--lista de contenido donde se ubican todas las mascotas.-->
-            <ListView x:Name="petList" Grid.Row="0">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout BackgroundColor="Transparent">
-                            <Frame BackgroundColor="#a08050"
-                                   CornerRadius="20">
-                                <ContentView BackgroundColor="Transparent">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="*"/>
-                                        </Grid.RowDefinitions>
+    <!--lista de contenido donde se ubican todas las mascotas.-->
+    <StackLayout>
+        <Grid BackgroundColor="Gray"
+              Margin="10, 10, 10, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                                        <Frame Grid.Column="1"
-                                               Grid.Row="1"
-                                               BackgroundColor="#8080">
-                                        </Frame>
-                                        <Frame Grid.Column="2"
-                                               Grid.Row="1">
-                                            <Label Text="{Binding name}"/>
-                                        </Frame>
-                                    </Grid>
-                                </ContentView>
-                            </Frame>
-                            <Button BackgroundColor="Transparent"
-                                    TextColor="White"
-                                    TranslationY="-45"
-                                    ScaleY="2.4"
-                                    Margin="10"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            
-            <!--Botón para agregar mascotas-->
-            <StackLayout>
-                <Frame BackgroundColor="#a08050"
-                        CornerRadius="20">
-                    <ContentView BackgroundColor="Transparent">
-                        <Grid>
-                            <Grid BackgroundColor="Transparent">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="110"/>
-                                    <ColumnDefinition Width="190"/>
-                                </Grid.ColumnDefinitions>
-                                <Frame BackgroundColor="Transparent"
-                                       CornerRadius="100"
-                                       HeightRequest="75"
-                                       WidthRequest="75"
-                                       Scale="0.6"
-                                       Grid.Column="0">
-                                    <Image Source="ts2"
-                                           HorizontalOptions="End"/>
-                                </Frame>
-                                <Frame Grid.Column="1"
-                                       BackgroundColor="Transparent"
-                                       HorizontalOptions="StartAndExpand"
-                                       VerticalOptions="Center"
-                                       TranslationX="-40">
-                                    <Label Text="Agregar Mascota!"
-                                           HorizontalTextAlignment="Start"
-                                           FontSize="18"/>
-                                </Frame>
-                            </Grid>
-                            <Button x:Name="btn_addPet"
-                                        Clicked="btn_addPet_Clicked"
-                                        BackgroundColor="#80808080"/>
-                        </Grid>
-                    </ContentView>
-                </Frame>
-            </StackLayout>
+            <!--Proxima barra de busqueda-->
+            <Frame Grid.Column="0"
+                   Margin="0, 0, 4, 0">
+            </Frame>
+
+            <!--Botón para agrear mascotas-->
+            <Button BackgroundColor="Brown"
+                    Grid.Column="1"
+                    x:Name="btn_addPet"
+                    Clicked="btn_addPet_Clicked"/>
         </Grid>
-    </ScrollView>
+        <ListView x:Name="lstPets"
+                  RowHeight="150"
+                  BackgroundColor="Gray"
+                  Margin="10, 5, 10, 10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout BackgroundColor="Transparent">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding IdPet}" Grid.Row="0" Grid.Column="0" TextColor="Blue"/>
+                            <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                            <Label Text="{Binding Description}" Grid.Row="1" Grid.ColumnSpan="2" TextColor="Green"/>
+                        </Grid>
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

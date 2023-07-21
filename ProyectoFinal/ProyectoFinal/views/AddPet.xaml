@@ -2,23 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.AddPet">
-    <ContentPage.Content>
         <StackLayout>
             <Label Text="Agrega al nuevo integrante" HorizontalOptions="Center"/>
             <Entry x:Name="petName" Placeholder="Nombre"/>
-            <!--
-            <Picker x:Name="animalType" SelectedIndexChanged="OnPickerSelectionChanged">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>a</x:String>
-                        <x:String>b</x:String>
-                        <x:String>c</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-            -->
-            <Entry x:Name="petNotes" Placeholder="Notas"/>
+            <Entry x:Name="petDescription" Placeholder="Notas"/>
             <Button x:Name="btn_SavePet" Text="Agregar al recinto!" Clicked="Btn_SavePet"/>
         </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

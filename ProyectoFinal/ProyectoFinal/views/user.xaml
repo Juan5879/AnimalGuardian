@@ -51,9 +51,9 @@
                 <!--Contenedor con los elementos del boton de Ajustes.-->
                 <!--Ocupando las 2 columnas del contenedor de botones y una fila del mismo.-->
                 <Grid BackgroundColor="#a08050"
-                             Grid.ColumnSpan="2"
-                             Grid.Row="0"
-                             Margin="2">
+                      Grid.ColumnSpan="2"
+                      Grid.Row="0"
+                      Margin="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -63,8 +63,8 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0"
-                           Grid.Row="0"
-                           BackgroundColor="Transparent">
+                          Grid.Row="0"
+                          BackgroundColor="Transparent">
                         <Image Source="ts2.png">
                         </Image>
                     </Grid>
@@ -84,9 +84,9 @@
                 <!--Contenedor con los elementos del boton de "Contactarse"-->
                 <!--Ocupando 1 columna del contenedor de botones y una fila del mismo.-->
                 <Grid BackgroundColor="#a08050"
-                             Grid.Column="0"
-                             Grid.Row="1"
-                             Margin="2">
+                      Grid.Column="0"
+                      Grid.Row="1"
+                      Margin="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -96,8 +96,8 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0"
-                           Grid.Row="0"
-                           BackgroundColor="Transparent">
+                          Grid.Row="0"
+                          BackgroundColor="Transparent">
                         <Image Source="ts2.png">
                         </Image>
                     </Grid>
@@ -117,9 +117,9 @@
                 <!--Contenedor con los elementos del boton de "Cerrar sesión.-->
                 <!--Ocupando 1 columna del contenedor de botones y una fila del mismo.-->
                 <Grid BackgroundColor="#a08050"
-                             Grid.Column="1"
-                             Grid.Row="1"
-                             Margin="2">
+                      Grid.Column="1"
+                      Grid.Row="1"
+                      Margin="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
