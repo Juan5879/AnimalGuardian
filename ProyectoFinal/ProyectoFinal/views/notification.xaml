@@ -2,13 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.notification">
-    <ScrollView>
+    <StackLayout BackgroundColor="Gray"
+                Padding="10">
         <ListView RowHeight="150">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    
+                    <Grid BackgroundColor="Firebrick"
+              Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Motivo" Grid.Row="0" Grid.ColumnSpan="3" VerticalOptions="Center" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="12:00" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Start" FontAttributes="Italic"/>
+                        <Label Text="Description" Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="Brown"/>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </ScrollView>
+    </StackLayout>
 </ContentPage>

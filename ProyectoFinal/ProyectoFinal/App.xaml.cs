@@ -9,7 +9,7 @@ namespace ProyectoFinal
 {
     public partial class App : Application
     {
-        static SQLiteHelper connection;
+        //static SQLiteHelper connection;
 
         public App()
         {
@@ -17,6 +17,7 @@ namespace ProyectoFinal
             //hace de Login la nueva pestaña de inicio, es la que se mostrará al iniciar la aplicación.
             MainPage = new NavigationPage(new MainPage());
         }
+        /*
         public static SQLiteHelper SQLiteDB
         {
             get
@@ -27,7 +28,7 @@ namespace ProyectoFinal
                 }
                 return connection;
             }
-        }
+        }*/
 
         protected override void OnStart()
         {

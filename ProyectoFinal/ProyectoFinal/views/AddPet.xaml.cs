@@ -16,7 +16,7 @@ namespace ProyectoFinal.views
     {
         public AddPet()
         {
-            
+            InitializeComponent();
         }
         private async void Btn_SavePet(object sender, EventArgs e)
         {
@@ -28,7 +28,7 @@ namespace ProyectoFinal.views
                     Name = petName.Text,
                     Description = petDescription.Text,
                 };
-                await App.SQLiteDB.SavePet(pet);
+                //await App.SQLiteDB.SavePet(pet);
 
                 //Deja vacias las variables.
                 petName.Text = "";

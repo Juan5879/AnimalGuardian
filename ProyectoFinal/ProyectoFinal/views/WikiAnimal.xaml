@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.WikiAnimal">
+    <ContentPage.Content>
+        <StackLayout Padding="10"
+                     BackgroundColor="Gray">
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="Firebrick">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="arana.png" Grid.Row="0" Grid.Column="0" Scale="1"/>
+                            <Label Text="Animal" TextColor="Black" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+                            <Label Text="Descripción" BackgroundColor="Brown" TextColor="Black" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="10, 10, 10, 10"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

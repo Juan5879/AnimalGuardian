@@ -22,14 +22,14 @@ namespace ProyectoFinal.views
             InitializeComponent();
          
         }
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
-            base.OnAppearing();
+            /*base.OnAppearing();
             var petList = await App.SQLiteDB.GetAllPets();
             if(petList != null )
             {
                 lstPets.ItemsSource = petList;
-            }
+            }*/
         }
 
         private async void btn_addPet_Clicked(object sender, EventArgs e)

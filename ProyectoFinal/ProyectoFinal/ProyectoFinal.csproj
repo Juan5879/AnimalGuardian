@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
   </PropertyGroup>
@@ -15,14 +15,15 @@
     <None Remove="App.xaml" />
     <None Remove="views\AddPage.xaml" />
     <None Remove="views\AddPet.xaml" />
-    <None Remove="views\animal.xaml" />
     <None Remove="views\enclosurePet.xaml" />
+    <None Remove="views\Forum.xaml" />
     <None Remove="views\Login.xaml" />
     <None Remove="views\MainPage.xaml" />
     <None Remove="views\notification.xaml" />
     <None Remove="views\RecoveryPass.xaml" />
     <None Remove="views\Register.xaml" />
     <None Remove="views\user.xaml" />
+    <None Remove="views\WikiAnimal.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,10 +32,10 @@
     <EmbeddedResource Include="views\AddPet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\animal.xaml">
+    <EmbeddedResource Include="views\enclosurePet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\enclosurePet.xaml">
+    <EmbeddedResource Include="views\Forum.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Login.xaml">
@@ -49,6 +50,9 @@
     <EmbeddedResource Include="views\RecoveryPass.xaml" />
     <EmbeddedResource Include="views\Register.xaml" />
     <EmbeddedResource Include="views\user.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\WikiAnimal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

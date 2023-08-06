@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.Forum">
+    <ContentPage.Content>
+        <StackLayout Padding="10"
+                     BackgroundColor="Gray">  
+            <ListView RowHeight="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="Firebrick">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="ts2.png" Grid.Row="0" Grid.Column="0" Scale="1"/>
+                            <Label Text="Consigna" TextColor="Black" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+                            <Label Text="01/01/2021" TextColor="Black" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" FontSize="12"  FontAttributes="Italic"/>
+                            <Label Text="user" TextColor="Blue" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            <Label Text="Content" TextColor="Black" BackgroundColor="Brown" Margin="0, 0, 5, 5" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace ProyectoFinal.views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class animal : ContentPage
-    {
-        public animal()
-        {
-            InitializeComponent();
-        }
-    }
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class WikiAnimal : ContentPage
+	{
+		public WikiAnimal ()
+		{
+			InitializeComponent ();
+		}
+	}
 }

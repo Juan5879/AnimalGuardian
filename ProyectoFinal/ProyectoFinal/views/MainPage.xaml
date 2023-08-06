@@ -11,8 +11,8 @@
             SelectedTabColor="Black"
             UnselectedTabColor="White">
 
-    <local:AddPage Title="Foro"/>
-    <local:animal Title="Animales"/>
+    <local:Forum Title="Foro"/>
+    <local:WikiAnimal Title="Animales"/>
     <local:enclosurePet Title="Recinto"/>
     <local:notification Title="Notificaciones"/>
     <local:user Title="Usuario"/>
