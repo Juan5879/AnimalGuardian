@@ -2,14 +2,28 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ProyectoFinal.views;
-using ProyectoFinal.data;
+using ProyectoFinal.model;
+using SQLite;
 using System.IO;
+using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 
 namespace ProyectoFinal
 {
     public partial class App : Application
     {
-        //static SQLiteHelper connection;
+        private static SQLiteHelper db;
+        public static SQLiteHelper Database
+        {
+            get
+            {
+                if (db == null)
+                {
+                    db = new SQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Mascotas.db3"));
+                }
+                return db;
+            }
+        }
 
         public App()
         {
@@ -17,18 +31,6 @@ namespace ProyectoFinal
             //hace de Login la nueva pestaña de inicio, es la que se mostrará al iniciar la aplicación.
             MainPage = new NavigationPage(new MainPage());
         }
-        /*
-        public static SQLiteHelper SQLiteDB
-        {
-            get
-            {
-                if (connection == null)
-                {
-                    connection = new SQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Database.db3"));
-                }
-                return connection;
-            }
-        }*/
 
         protected override void OnStart()
         {
@@ -41,5 +43,6 @@ namespace ProyectoFinal
         protected override void OnResume()
         {
         }
+
     }
 }

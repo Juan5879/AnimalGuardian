@@ -14,35 +14,30 @@ namespace ProyectoFinal.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPet : ContentPage
     {
+        SQLiteHelper SQLiteHelper;
+
         public AddPet()
         {
             InitializeComponent();
         }
-        private async void Btn_SavePet(object sender, EventArgs e)
+        async void Btn_SavePet(object sender, EventArgs e)
         {
-            if (ValidarDatos())
+            if(string.IsNullOrWhiteSpace(petName.Text) || string.IsNullOrWhiteSpace(petDescription.Text))
             {
-                //Crear una nueva clase "pet" donde se llenan los campos para guardarlos en la base de datos.
-                pets pet = new pets
-                {
-                    Name = petName.Text,
-                    Description = petDescription.Text,
-                };
-                //await App.SQLiteDB.SavePet(pet);
-
-                //Deja vacias las variables.
-                petName.Text = "";
-                petDescription.Text = "";
-
-                //Alerta de que se guardaron los datos.
-                await DisplayAlert("Registro", "Se cargaron los datos correctamente.", "Aceptar");
+                await DisplayAlert("datos invalidos", "Los campos esán vacíos", "Ok");
             }
-
-            //En caso de no poder guardar los datos se despliega este mensaje.
             else
             {
-                await DisplayAlert("Error", "Datos incompletos", "Aceptar");
+                AddNewPet();
             }
+        }
+        async void AddNewPet()
+        {
+            await App.Database.CreatePet(new model.pets
+            {
+                Name = petName.Text,
+                Description = petDescription.Text,
+            });
             await Navigation.PopAsync();
         }
 
