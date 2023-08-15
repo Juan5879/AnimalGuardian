@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.AddForumContent">
+    <ContentPage.Content>
+        <StackLayout Background="#A3DDAA">
+            <Frame VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="5"
+                   BackgroundColor="Black"
+                   Opacity="0.8"
+                   CornerRadius="15">
+                <StackLayout>
+                    <Label Text="Puedes agregar un tema de discución al foro general." HorizontalOptions="Center" FontAttributes="Bold"/>
+                    <Entry x:Name="forumTitle" Placeholder="De que quieres hablar?"/>
+                    <Entry x:Name="forumContent" Placeholder="Profundiza en el tema..."/>
+                    <Button x:Name="btn_SavePet" Text="Agregar al recinto!" Clicked="Btn_SavePet"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

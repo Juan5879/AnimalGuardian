@@ -7,13 +7,13 @@
             mc:Ignorable="d"
             x:Class="ProyectoFinal.views.MainPage"
             BarTextColor="Black"
-            BarBackgroundColor="#157545"
-            SelectedTabColor="Black"
-            UnselectedTabColor="White">
+            BarBackgroundColor="#95a306"
+            SelectedTabColor="White"
+            UnselectedTabColor="Black">
 
-    <local:Forum Title="Foro"/>
-    <local:WikiAnimal Title="Animales"/>
-    <local:enclosurePet Title="Recinto"/>
-    <local:notification Title="Notificaciones"/>
-    <local:user Title="Usuario"/>
+    <local:Forum Title="Foro" IconImageSource="ts2.png"/>
+    <local:WikiAnimal Title="Animales" IconImageSource="arana.png"/>
+    <local:enclosurePet Title="Recinto" IconImageSource="arana.png"/>
+    <local:notification Title="Notificaciones" IconImageSource="notificacioncampana.png"/>
+    <local:user Title="Usuario" IconImageSource="usuario.png"/>
 </TabbedPage>

@@ -16,9 +16,6 @@ namespace ProyectoFinal.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class enclosurePet : ContentPage
     {
-        SQLiteHelper SQLiteHelper;
-
-
         public enclosurePet()
         {
             InitializeComponent();
@@ -51,9 +48,28 @@ namespace ProyectoFinal.views
             await Navigation.PushAsync(new AddPet());
         }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
+            var item = sender as SwipeItem;
+            var pet = item.CommandParameter as pets;
+            await Navigation.PushAsync(new PetView(pet));
+        }
 
+        private async void SwipeItem_Invoked_1(object sender, EventArgs e)
+        {
+            var item = sender as SwipeItem;
+            var pet = item.CommandParameter as pets;
+            var result = await DisplayAlert("Borrar", $"Desea deshacerse de {pet.Name}? una vez eliminado no se podrá recuperar", "Eliminar", "Cancelar");
+            if (result)
+            {
+                await App.Database.DeletePet(pet);
+                lstPets.ItemsSource = await App.Database.ReadPets();
+            }
+        }
+
+        async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lstPets.ItemsSource = await App.Database.SearchPet(e.NewTextValue);
         }
     }
 }

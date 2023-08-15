@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <None Remove="App.xaml" />
+    <None Remove="views\AddContentToForum.xaml" />
+    <None Remove="views\AddForumContent.xaml" />
     <None Remove="views\AddPage.xaml" />
     <None Remove="views\AddPet.xaml" />
     <None Remove="views\enclosurePet.xaml" />
@@ -20,6 +22,7 @@
     <None Remove="views\Login.xaml" />
     <None Remove="views\MainPage.xaml" />
     <None Remove="views\notification.xaml" />
+    <None Remove="views\PetView.xaml" />
     <None Remove="views\RecoveryPass.xaml" />
     <None Remove="views\Register.xaml" />
     <None Remove="views\user.xaml" />
@@ -28,6 +31,12 @@
 
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
+    <ApplicationDefinition Include="views\AddForumContent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </ApplicationDefinition>
+    <EmbeddedResource Include="views\AddContentToForum.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\AddPage.xaml" />
     <EmbeddedResource Include="views\AddPet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -47,6 +56,9 @@
     <EmbeddedResource Include="views\notification.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\PetView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\RecoveryPass.xaml" />
     <EmbeddedResource Include="views\Register.xaml" />
     <EmbeddedResource Include="views\user.xaml">
@@ -64,6 +76,7 @@
     <PackageReference Include="System.Linq" Version="4.3.0" />
     <PackageReference Include="System.Text.Encodings.Web" Version="7.0.0" />
     <PackageReference Include="System.Threading" Version="4.3.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2612" />
     <PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
   </ItemGroup>

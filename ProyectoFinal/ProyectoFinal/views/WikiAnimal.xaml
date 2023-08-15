@@ -1,31 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ProyectoFinal.views.WikiAnimal">
     <ContentPage.Content>
-        <StackLayout Padding="10"
-                     BackgroundColor="Gray">
-            <ListView>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid BackgroundColor="Firebrick">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="70"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="70"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image Source="arana.png" Grid.Row="0" Grid.Column="0" Scale="1"/>
-                            <Label Text="Animal" TextColor="Black" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" FontSize="20" FontAttributes="Bold"/>
-                            <Label Text="Descripción" BackgroundColor="Brown" TextColor="Black" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="10, 10, 10, 10"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <AbsoluteLayout BackgroundColor="#A3DDAA">
+            <!--    
+    <ffimageloading:CachedImage Source="mainbackground.jpg"
+                    Aspect="AspectFill"
+                    AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    LoadingPlaceholder="ts2.png"
+                    ErrorPlaceholder="arana.png"
+                    CacheDuration="30"/>
+    -->
+            <StackLayout Padding="10">
+                <Frame Padding="0"
+                       BackgroundColor="#7e611b"
+                       CornerRadius="15">
+                    <SearchBar Placeholder="Que está buscando..."
+                               TextChanged="SearchBar_TextChanged"
+                               Keyboard="Chat"/>
+                </Frame>
+                <CollectionView x:Name="lstWiki">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" CornerRadius="15">
+                                <Grid Margin="0, 5" BackgroundColor="#90a330">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="70"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding NombreCientifico}" 
+                                           TextColor="Black" 
+                                           VerticalOptions="Center" 
+                                           FontSize="20" 
+                                           FontAttributes="Bold"
+                                           Grid.ColumnSpan="2"
+                                           Padding="3"/>
+                                    <Label Text="{Binding Descripcion}"
+                                           TextColor="Black"
+                                           VerticalOptions="CenterAndExpand"
+                                           Grid.Row="1"
+                                           Grid.ColumnSpan="2"
+                                           Padding="2"
+                                           MaxLines="3"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,34 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoFinal.views.Forum">
-    <ContentPage.Content>
-        <StackLayout Padding="10"
-                     BackgroundColor="Gray">  
-            <ListView RowHeight="200">
-                <ListView.ItemTemplate>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                    x:Class="ProyectoFinal.views.Forum">
+    <StackLayout BackgroundColor="#A3DDAA"
+                     Padding="10"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand">
+        <Frame Grid.Column="0"
+                   Padding="0"
+                   BackgroundColor="#7e611b"
+                   CornerRadius="15">
+            <SearchBar Placeholder="Busca temas de interes..."
+                       TextChanged="SearchBar_TextChanged"
+                              Keyboard="Chat"/>
+        </Frame>
+        <!--    
+    <ffimageloading:CachedImage Source="mainbackground.jpg"
+                    Aspect="AspectFill"
+                    AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    LoadingPlaceholder="ts2.png"
+                    ErrorPlaceholder="arana.png"
+                    CacheDuration="30"/>
+    -->
+        <Frame Padding="10" BackgroundColor="#d6bb8c" CornerRadius="15">
+            <CollectionView x:Name="lstForum"
+                                Margin="10, 10, 10, 10">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid BackgroundColor="Firebrick">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="70"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="70"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image Source="ts2.png" Grid.Row="0" Grid.Column="0" Scale="1"/>
-                            <Label Text="Consigna" TextColor="Black" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" FontSize="20" FontAttributes="Bold"/>
-                            <Label Text="01/01/2021" TextColor="Black" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" FontSize="12"  FontAttributes="Italic"/>
-                            <Label Text="user" TextColor="Blue" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
-                            <Label Text="Content" TextColor="Black" BackgroundColor="Brown" Margin="0, 0, 5, 5" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-
-                        </Grid>
+                        <Frame BackgroundColor="#90a407"
+                                   Padding="2"
+                                   CornerRadius="15">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Title}" TextColor="Black" Grid.Row="0" Grid.ColumnSpan="3" VerticalOptions="Start" FontSize="14" FontAttributes="Bold"/>
+                                <Label Text="{Binding Date}" TextColor="Black" Grid.Row="0" Grid.Column="3" HorizontalOptions="End" FontSize="12"  FontAttributes="Italic"/>
+                                <Label Text="{Binding User}" TextColor="Blue" Grid.Row="1" Grid.Column="0" FontSize="10" HorizontalOptions="Center" VerticalOptions="Start"/>
+                                <Label Text="{Binding Content}" TextColor="Black" BackgroundColor="#80808080" Margin="0, 0, 5, 5" VerticalOptions="Start" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+                            </Grid>
+                        </Frame>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+        <!--
+        <Button Text="Publica!"
+                    VerticalOptions="EndAndExpand"
+                    BackgroundColor="#3e2214"
+                    CornerRadius="15"
+                    x:Name="CreateForumContent"
+                    Clicked="CreateForumContent_Clicked"/>
+        -->
+    </StackLayout>
 </ContentPage>

@@ -16,6 +16,10 @@ namespace ProyectoFinal.views
 		{
 			InitializeComponent ();
 		}
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
 
         private async void btn_nav_config_Clicked(object sender, EventArgs e)
         {

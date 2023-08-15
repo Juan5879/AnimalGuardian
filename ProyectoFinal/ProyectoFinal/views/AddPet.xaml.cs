@@ -14,7 +14,6 @@ namespace ProyectoFinal.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPet : ContentPage
     {
-        SQLiteHelper SQLiteHelper;
 
         public AddPet()
         {

@@ -1,52 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ProyectoFinal.views.enclosurePet">
-    <!--lista de contenido donde se ubican todas las mascotas.-->
-    <StackLayout>
-        <Grid BackgroundColor="Gray"
-              Margin="10, 10, 10, 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#A3DDAA">
+            <!--    
+            <ffimageloading:CachedImage Source="mainbackground.jpg"
+                            Aspect="AspectFill"
+                            AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
+                            AbsoluteLayout.LayoutFlags="All"
+                            LoadingPlaceholder="ts2.png"
+                            ErrorPlaceholder="arana.png"
+                            CacheDuration="30"/>
+            -->
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Grid BackgroundColor="Transparent"
+                      Margin="10, 15, 10, 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="285"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <!--Proxima barra de busqueda-->
-            <Frame Grid.Column="0"
-                   Margin="0, 0, 4, 0">
-            </Frame>
+                    <!--Proxima barra de busqueda-->
+                    <Frame Grid.Column="0"
+                           Padding="0"
+                           BackgroundColor="#7e611b"
+                           CornerRadius="15">
+                        <SearchBar Placeholder="Que está buscando..."
+                                   TextChanged="SearchBar_TextChanged"
+                                   Keyboard="Chat"/>
+                    </Frame>
+                    
 
-            <!--Botón para agrear mascotas-->
-            <Button BackgroundColor="Brown"
-                    Grid.Column="1"
-                    x:Name="btn_addPet"
-                    Clicked="btn_addPet_Clicked"/>
-        </Grid>
+                    <!--Botón para agrear mascotas-->
+                    <Button BackgroundColor="#3e2214"
+                            Grid.Column="1"
+                            x:Name="btn_addPet"
+                            Clicked="btn_addPet_Clicked"
+                            CornerRadius="100"
+                            Text="+"
+                            FontSize="22"/>
+                </Grid>
+                <Frame CornerRadius="15"
+                       Margin="10"
+                       Padding="0"
+                       BackgroundColor="#d6bb8c">
+                    <CollectionView x:Name="lstPets"
+                                    Margin="10, 10, 10, 10">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <SwipeView BackgroundColor="Transparent"
+                                               Margin="0, 2">
+                                        <SwipeView.RightItems>
+                                            <SwipeItem Text="Editar"
+                                                       BackgroundColor="LightBlue"
+                                                       CommandParameter="{Binding .}"
+                                                       Invoked="SwipeItem_Invoked" />
+                                            <SwipeItem Text="Eliminar"
+                                                       BackgroundColor="IndianRed"
+                                                       CommandParameter="{Binding .}"
+                                                       Invoked="SwipeItem_Invoked_1"/>
+                                        </SwipeView.RightItems>
+                                        <Frame Padding="0"
+                                           BackgroundColor="#90a407"
+                                           CornerRadius="15">
+                                        <Grid RowSpacing="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="10"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding Name}"
+                                                    Grid.Row="0" Grid.Column="1"
+                                                    FontSize="20"
+                                                    FontAttributes="Bold"/>
 
-        <CollectionView x:Name="lstPets">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid RowSpacing="0"
-                          BackgroundColor="Gray">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="20"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Text="{Binding Name}"
-                               Grid.Row="0" Grid.Column="1"
-                               FontSize="20"
-                               FontAttributes="Bold"/>
-                        <Label Text="{Binding Description}"
-                               Grid.Row="1" Grid.Column="1"/>
-                        <Button Text="°°°"
-                                Grid.Column="1"
-                                HorizontalOptions="EndAndExpand"
-                                Scale="0.7"/>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
+                                                <Label Text="{Binding Description}"
+                                                    Grid.Row="1" Grid.Column="1"/>
+                                            </Grid>
+                                        </Frame>
+                                    </SwipeView>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
 </ContentPage>

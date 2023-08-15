@@ -25,11 +25,14 @@ namespace ProyectoFinal.views
         public MainPage()
         {
             InitializeComponent();
+
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom); //Coloca el TabbedPage en el fondo de la pantalla
             On<Android>().SetIsSmoothScrollEnabled(true); //habilita el desplazamiento suave en el TabbedPage. 
 
             this.Appearing += MainPage_move; //Cuando la página se muestra, se ejecuta el código dentro del método MainPage_move.
             totaldepaginas = Children.Count; //Asigna el número total de páginas hijos del TabbedPage a la variable.
+
+            NavigationPage.SetHasNavigationBar(this, false);
         }   
 
         private async void MainPage_move(object sender, EventArgs e) //El menú se desplaza solo hasta recinto gracias a esta función.
