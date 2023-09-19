@@ -10,9 +10,9 @@ namespace ProyectoFinal.model
     public class WikiData
     {
         [PrimaryKey, AutoIncrement]
-        public int IdWiki { get; set; }
-        public string NombreCientifico { get; set; }
-        public string Descripcion { get; set; }
-        public string Cuidados { get; set; }
+        public Guid IdWiki { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public byte[] Image { get; set; }
     }
 }

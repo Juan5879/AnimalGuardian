@@ -5,12 +5,12 @@
     <ContentPage.Content>
         <AbsoluteLayout>
             <Image Source="geckonaranja.jpg" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill" />
-            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.4" AbsoluteLayout.LayoutFlags="All" Padding="9" BackgroundColor="#B3000000">
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 1" AbsoluteLayout.LayoutFlags="All" Padding="9" BackgroundColor="#B3000000">
                 <Label Text="Iniciar Sesion" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                 <Entry x:Name="user" Placeholder="Usuario"/>
                 <Entry x:Name="email" Placeholder="Correo electronico"/>
-                <Entry x:Name="password" Placeholder="Contraseña" IsPassword="True"/>
-                <Entry x:Name="passwordrepeat" Placeholder="Repetir contraseña" IsPassword="True"/>
+                <Entry x:Name="password" Placeholder="Contraseña" IsPassword="False"/>
+                <Entry x:Name="passwordrepeat" Placeholder="Repetir contraseña" IsPassword="False"/>
                 <Button x:Name="btn_sendata" Text="Registrarse" Clicked="Btn_sendata"/>
             </StackLayout>
         </AbsoluteLayout>

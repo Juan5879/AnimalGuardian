@@ -16,7 +16,23 @@ namespace ProyectoFinal
             db.CreateTableAsync<pets>();
             db.CreateTableAsync<WikiData>();
             db.CreateTableAsync<ForumContent>();
+            db.CreateTableAsync<User>();
         }
+
+        //Usuario
+        public Task<List<User>> GetUser()
+        {
+            return db.Table<User>().ToListAsync();
+        }
+        public Task<int> SaveUser(User user)
+        {
+            return db.InsertAsync(user);
+        }
+        public Task<int> DeleteUser(User user)
+        {
+            return db.DeleteAsync(user);
+        }
+
 
         //mascotas
         public Task<int> CreatePet (pets pet)
@@ -51,7 +67,7 @@ namespace ProyectoFinal
         }
         public Task<List<WikiData>> SearchWiki(string query)
         {
-            return db.Table<WikiData>().Where(p => p.NombreCientifico.Contains(query)).ToListAsync();
+            return db.Table<WikiData>().Where(p => p.Name.Contains(query)).ToListAsync();
         }
 
         //Foro

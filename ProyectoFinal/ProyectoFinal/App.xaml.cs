@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ProyectoFinal.views;
@@ -7,6 +8,8 @@ using SQLite;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
+using ProyectoFinal.http;
+using Xamarin.Essentials;
 
 namespace ProyectoFinal
 {
@@ -28,13 +31,23 @@ namespace ProyectoFinal
         public App()
         {
             InitializeComponent();
-            //hace de Login la nueva pestaña de inicio, es la que se mostrará al iniciar la aplicación.
-            MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
+            base.OnStart();
+            string authToken = await SecureStorage.GetAsync("AuthToken");
+
+            if (!string.IsNullOrEmpty(authToken))
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new Login());
+            }
         }
+
 
         protected override void OnSleep()
         {

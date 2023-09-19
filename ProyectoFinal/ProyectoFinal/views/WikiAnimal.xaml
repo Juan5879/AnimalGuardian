@@ -22,35 +22,32 @@
                                TextChanged="SearchBar_TextChanged"
                                Keyboard="Chat"/>
                 </Frame>
-                <CollectionView x:Name="lstWiki">
+                <CollectionView x:Name="lstWiki"
+                                Margin="10">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" CornerRadius="15">
-                                <Grid Margin="0, 5" BackgroundColor="#90a330">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="70"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding NombreCientifico}" 
-                                           TextColor="Black" 
-                                           VerticalOptions="Center" 
-                                           FontSize="20" 
-                                           FontAttributes="Bold"
-                                           Grid.ColumnSpan="2"
-                                           Padding="3"/>
-                                    <Label Text="{Binding Descripcion}"
-                                           TextColor="Black"
-                                           VerticalOptions="CenterAndExpand"
-                                           Grid.Row="1"
-                                           Grid.ColumnSpan="2"
-                                           Padding="2"
-                                           MaxLines="3"/>
-                                </Grid>
-                            </Frame>
+                            <StackLayout>
+                                <Frame BackgroundColor="#80808080">
+                                    <Grid RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Text="{Binding IdWiki}"/>    
+                                        <Label Text="{Binding Name}" Grid.Column="1"/>
+                                        <Label Text="{Binding Description}" Grid.Column="1" Grid.Row="1"/>
+
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

@@ -7,7 +7,7 @@
             <Image Source="mariquitaroja.jpg" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill" />
             <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.5" AbsoluteLayout.LayoutFlags="All" Padding="9" BackgroundColor="#B3000000">
                 <Label Text="Iniciar Sesion" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Entry x:Name="user" Placeholder="Usuario"/>
+                <Entry x:Name="user" Placeholder="Usuario o Email"/>
                 <Entry x:Name="password" Placeholder="Contraseña" IsPassword="True"/>
                 <Button x:Name="btn_login" Text="Ingresar" Clicked="Btn_login"/>
                 <Button x:Name="btn_nav_register" Text="Registrarse" Clicked="Btn_nav_register"/>
