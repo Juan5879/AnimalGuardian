@@ -22,6 +22,7 @@
     <None Remove="views\Login.xaml" />
     <None Remove="views\MainPage.xaml" />
     <None Remove="views\notification.xaml" />
+    <None Remove="views\PetDetails.xaml" />
     <None Remove="views\PetView.xaml" />
     <None Remove="views\RecoveryPass.xaml" />
     <None Remove="views\Register.xaml" />
@@ -54,6 +55,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="views\notification.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\PetDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="views\PetView.xaml">

@@ -9,6 +9,7 @@ using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ProyectoFinal.model;
+using Xamarin.Essentials;
 
 namespace ProyectoFinal.views
 { 
@@ -71,6 +72,19 @@ namespace ProyectoFinal.views
         {
             lstPets.ItemsSource = await App.Database.SearchPet(e.NewTextValue);
         }
+
+        private async void lstPets_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
+
+            var selectedPet = (pets)e.SelectedItem;
+
+            await Navigation.PushAsync(new PetDetails(selectedPet));
+
+            lstPets.SelectedItem = null;
+        }
+
     }
 }
 
