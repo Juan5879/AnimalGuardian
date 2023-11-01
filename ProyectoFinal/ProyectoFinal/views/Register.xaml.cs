@@ -35,7 +35,6 @@ namespace ProyectoFinal.views
                 await apiservice.CreateUserAsync(newUser);
                 await Navigation.PopAsync();
 
-                await App.Database.SaveUser(newUser);
             }
             else
             {

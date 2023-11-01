@@ -15,5 +15,5 @@
     <local:WikiAnimal Title="Animales" IconImageSource="arana.png"/>
     <local:enclosurePet Title="Recinto" IconImageSource="arana.png"/>
     <local:notification Title="Notificaciones" IconImageSource="notificacioncampana.png"/>
-    <local:user Title="Usuario" IconImageSource="usuario.png"/>
+    <local:UserPage Title="Usuario" IconImageSource="usuario.png"/>
 </TabbedPage>

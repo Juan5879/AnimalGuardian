@@ -20,10 +20,11 @@ namespace ProyectoFinal
         }
 
         //Usuario
-        public Task<List<User>> GetUser()
+        public Task<User> GetUserById(int userId)
         {
-            return db.Table<User>().ToListAsync();
+            return db.Table<User>().Where(u => u.IdUserLocal == userId).FirstOrDefaultAsync();
         }
+
         public Task<int> SaveUser(User user)
         {
             return db.InsertAsync(user);
@@ -35,9 +36,9 @@ namespace ProyectoFinal
 
 
         //mascotas
-        public Task<int> CreatePet (pets pet)
+        public async Task<int> CreatePet (pets pet)
         {
-            return db.InsertAsync(pet);
+            return await db.InsertAsync(new pets { IdPet = Guid.NewGuid(), Name = pet.Name, Description = pet.Description });
         }
         public Task<List<pets>> ReadPets()
         {

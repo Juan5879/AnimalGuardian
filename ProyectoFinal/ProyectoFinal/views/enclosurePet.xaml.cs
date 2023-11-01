@@ -12,7 +12,7 @@ using ProyectoFinal.model;
 using Xamarin.Essentials;
 
 namespace ProyectoFinal.views
-{ 
+{
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class enclosurePet : ContentPage
@@ -27,7 +27,8 @@ namespace ProyectoFinal.views
             try
             {
                 base.OnAppearing();
-                lstPets.ItemsSource = await App.Database.ReadPets(); 
+                var petsList = await App.Database.ReadPets();
+                lstPets.ItemsSource = petsList.ToList();
             }
             catch
             {
@@ -45,7 +46,7 @@ namespace ProyectoFinal.views
         }
 
         private async void btn_addPet_Clicked(object sender, EventArgs e)
-        {           
+        {
             await Navigation.PushAsync(new AddPet());
         }
 
@@ -67,8 +68,8 @@ namespace ProyectoFinal.views
                 lstPets.ItemsSource = await App.Database.ReadPets();
             }
         }
-
-        async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        
+        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             lstPets.ItemsSource = await App.Database.SearchPet(e.NewTextValue);
         }
@@ -88,4 +89,4 @@ namespace ProyectoFinal.views
     }
 }
 
-                                                              /*▄︻デPAN̷══━一*/
+/*▄︻デPAN̷══━一*/

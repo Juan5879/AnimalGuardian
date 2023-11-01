@@ -3,17 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.AddContentToForum">
     <StackLayout Background="#A3DDAA">
-        <Frame VerticalOptions="CenterAndExpand"
-       HorizontalOptions="CenterAndExpand"
-       Margin="5"
-       BackgroundColor="Black"
-       Opacity="0.8"
-       CornerRadius="15">
-            <StackLayout>
-                <Label Text="Agrega un tema de discución o contribución al foro." HorizontalOptions="Center" FontAttributes="Bold"/>
-                <Entry x:Name="forumTitle" Placeholder="Sobre que quieres publicar?"/>
-                <Entry x:Name="forumContent" Placeholder="Profundiza en el tema..." MaxLength="2000"/>
-                <Button x:Name="post" Text="Publicar" Clicked="post_Clicked"/>
+        <Frame Padding="0"
+               CornerRadius="30">
+            <StackLayout BackgroundColor="Black"
+                         Opacity="0.8"
+                         Padding="100">
+                <Label Text="Agrega un tema de discución o contribución al foro."
+                       FontAttributes="Bold"
+                       FontSize="17" 
+                       HorizontalOptions="StartAndExpand"/>
+                <Entry x:Name="forumTitle"
+                       Placeholder="Sobre que quieres publicar?"/>
+                <Entry x:Name="forumContent"
+                       Placeholder="Profundiza en el tema..."
+                       MaxLength="3000" HeightRequest="200"
+                       VerticalTextAlignment="End"/>
+                <Button x:Name="post"
+                        Text="Publicar"
+                        Clicked="post_Clicked"
+                        CornerRadius="30"/>
             </StackLayout>
         </Frame>
     </StackLayout>

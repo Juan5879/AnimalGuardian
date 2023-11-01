@@ -27,31 +27,23 @@ namespace ProyectoFinal.views
         {
             User userAuth = new User
             {
-                Name = user.Text,
-                Email = user.Text,
-                Password = password.Text
+                Name = user.Text, 
+                Password = password.Text,
+                Email = user.Text
             };
 
-            var confirmation = await apiservice.UserAuth(userAuth);
+
+            var BodyConfirmation = await apiservice.UserAuth(userAuth);
+            var confirmation = BodyConfirmation.status;
 
             if (confirmation == true)
             {
-                string authToken = "authUserLogged";
-                await SecureStorage.SetAsync("AuthToken", authToken);
-                try
-                {
-                    string userAuthData = JsonConvert.SerializeObject(userAuth);
-                    await SecureStorage.SetAsync("UserData", userAuthData);
-                }
-                catch (Exception ex)
-                {
-                    await DisplayAlert("Error", $"Hubo un problema al guardar los datos, no se guardará la sesión pero puede seguir usandola. Error: {ex}", "Ok");
-                }
                 await Navigation.PushAsync(new MainPage());
             }
             else
             {
-                await DisplayAlert("Error", "No se pudieron validar los datos, asegurese que los campos sean correctos, en caso contrario intente en otro momento", "Ok");
+                
+                await DisplayAlert("problema", "error", "ok");
             }
         }
         private async void Btn_nav_register(object sender, EventArgs e)

@@ -9,10 +9,21 @@ namespace ProyectoFinal.model
 {
     public class WikiData
     {
-        [PrimaryKey, AutoIncrement]
         public Guid IdWiki { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public byte[] Image { get; set; }
+        public string ScientificName { get; set; }
+        public string Species { get; set; }
+        public string SubSpecies { get; set; }
+        public string GeographicalDistribution { get; set; }
+        public string Habitat { get; set; }
+        public string AverageSizeWeight { get; set; }
+        public string Behavior { get; set; }
+        public string Reproduction { get; set; }
+        public string Diet { get; set; }
+        public string AnatomyCharacteristics { get; set; }
+        public string StateConservation { get; set; }
+        public string Curiosities { get; set; }
+        public string ConservationThreats { get; set; }
+        public string Image { get; set; }
     }
 }

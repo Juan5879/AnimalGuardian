@@ -8,13 +8,17 @@ using System.Net;
 using Newtonsoft.Json;
 using ProyectoFinal.model;
 using System.Security;
+using Xamarin.Essentials;
 
 namespace ProyectoFinal.http
 {
     internal class APIService
     {
         private readonly HttpClient _httpClient;
-        private const string ApiBaseUrl = "https://DireccionOfrecidaPor.ngrok.io/api";
+        private const string ApiBaseUrl = "https://direccion.com/api";
+
+        string error;
+        string errorDetalles;
 
         public APIService()
         {
@@ -66,6 +70,7 @@ namespace ProyectoFinal.http
                     Console.WriteLine($"Error en la solicitud POST: {response.StatusCode}");
                     string errorResponse = await response.Content.ReadAsStringAsync();
                     Console.WriteLine(errorResponse);
+
                     return null;
                 }
             }
@@ -75,36 +80,31 @@ namespace ProyectoFinal.http
                 return null;
             }
         }
-        public async Task<bool> UserAuth(User userauth)
+
+        public async Task<UserAuthStatus> UserAuth(User userauth)
         {
-            try
+            var userstatus = new UserAuthStatus
             {
-                var jsonContent = new StringContent(JsonConvert.SerializeObject(userauth), Encoding.UTF8, "application/json");
-                var response = await _httpClient.PostAsync($"{ApiBaseUrl}/userauth", jsonContent);
+                status = false
+            };
 
-                if (response.IsSuccessStatusCode)
-                {
-                    var jsonResponse = await response.Content.ReadAsStringAsync();
-                    var responseObject = JsonConvert.DeserializeObject<Authentication>(jsonResponse);
-
-                    bool value = responseObject.value;
-                    return value;
-                }
-                else
-                {
-                    Console.WriteLine($"Error en la solicitud POST: {response.StatusCode}");
-                    string errorResponse = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine(errorResponse);
-                    return false;
-                }
+            var jsonContent = new StringContent(JsonConvert.SerializeObject(userauth), Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync($"{ApiBaseUrl}/auth", jsonContent);
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                userstatus.status = JsonConvert.DeserializeObject<UserAuthStatus>(jsonResponse).status;
+                return userstatus;
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("Error: " + ex.Message);
-                return false;
+                Console.WriteLine($"Error en la solicitud POST: {response.StatusCode}");
+                string errorResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(errorResponse);
+
+                return userstatus;
             }
         }
-
 
         public async void PostUserAsync(string name, string email, string password)
         {
@@ -122,19 +122,51 @@ namespace ProyectoFinal.http
             {
                 HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PostAsync($"{ApiBaseUrl}/post/user", content);
+                HttpResponseMessage response = await client.PostAsync($"{ApiBaseUrl}/user", content);
             }
         }
 
         //Foro
+        public async Task<List<ForumContent>> GetForumContent()
+        {
+            var response = await _httpClient.GetAsync($"{ApiBaseUrl}/forum");
+            var json = await response.Content.ReadAsStringAsync();
+            var data = JsonConvert.DeserializeObject<List<ForumContent>>(json);
+            return data;
+        } 
+        public async Task<bool> PostForum(ForumContent content)
+        {
+            try
+            {
+                var jsonContent = new StringContent(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync($"{ApiBaseUrl}/forum", jsonContent);
 
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    var createdPost = JsonConvert.DeserializeObject<ForumContent>(jsonResponse);
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine($"Error en la solicitud POST: {response.StatusCode}");
+                    string errorResponse = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(errorResponse);
+
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine (e.Message);  
+                return false;
+            }            
+        }
     }
-
-
-
 
     public class Authentication
     {
         public Boolean value { get; set; }
     }
 }
+    

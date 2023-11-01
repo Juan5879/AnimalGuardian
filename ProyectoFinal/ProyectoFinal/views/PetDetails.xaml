@@ -3,14 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.PetDetails">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout>
-                <Label Text="Nombre:" />
-                <Label x:Name="petName" />
+        <AbsoluteLayout Background="#A3DDAA">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.ColumnSpan="1"
+                             Grid.Column="1">
+                    <Label Text="Nombre:"
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+                    <Label x:Name="petName"
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+                </StackLayout>
 
-                <Label Text="Descripción:" />
-                <Label x:Name="petDescription" />
-            </StackLayout>
-        </StackLayout>
+                <StackLayout Grid.Column="1"
+                             Grid.ColumnSpan="1"
+                             Grid.Row="1">
+                    <Label Text="Descripción:"
+                           TextColor="Black"/>
+                    <Label x:Name="petDescription"
+                           TextColor="Black"/>
+                </StackLayout>
+
+                <Button Text="Editar"
+                        Grid.Row="3"
+                        VerticalOptions="End"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="#1E6D90"/>
+                <Button Text="Editar"
+                        Grid.Row="3"
+                        VerticalOptions="End"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="2"
+                        BackgroundColor="#CF424C"/>
+
+                <Label Text="En esta página de contenido se agregará: imagen del animal, boton para editar los datos y boton para borrar los datos. Por el momento esto es solo una plantilla de prueba para el Listview ya que requiere un documento .xaml para funcionar."
+                       Grid.Row="2"
+                       Grid.ColumnSpan="4"/>
+            </Grid>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

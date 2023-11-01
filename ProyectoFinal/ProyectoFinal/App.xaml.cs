@@ -15,6 +15,7 @@ namespace ProyectoFinal
 {
     public partial class App : Application
     {
+
         private static SQLiteHelper db;
         public static SQLiteHelper Database
         {
@@ -36,18 +37,33 @@ namespace ProyectoFinal
         protected override async void OnStart()
         {
             base.OnStart();
-            string authToken = await SecureStorage.GetAsync("AuthToken");
 
-            if (!string.IsNullOrEmpty(authToken))
+            //string usuarioAlmacenado = await SecureStorage.GetAsync("Usuario");
+            //string contraseñaAlmacenada = await SecureStorage.GetAsync("Contraseña");
+            /*
+            if (!string.IsNullOrEmpty(usuarioAlmacenado) && !string.IsNullOrEmpty(contraseñaAlmacenada))
             {
-                MainPage = new NavigationPage(new MainPage());
-            }
-            else
-            {
-                MainPage = new NavigationPage(new Login());
-            }
+                UserData userAuth = new UserData
+                {
+                    Name = usuarioAlmacenado,
+                    Password = contraseñaAlmacenada,
+                    Email = usuarioAlmacenado
+                };
+
+                var BodyConfirmation = await apiservice.UserAuth(userAuth);
+                var confirmation = BodyConfirmation.status;
+
+                if (confirmation == true)
+                {
+                    MainPage = new NavigationPage(new MainPage());
+                }
+                else
+                {
+                    MainPage = new NavigationPage(new Login());
+                }
+            }*/
+            MainPage = new NavigationPage(new Login());
         }
-
 
         protected override void OnSleep()
         {

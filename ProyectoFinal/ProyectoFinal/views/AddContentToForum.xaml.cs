@@ -1,4 +1,5 @@
-﻿using ProyectoFinal.model;
+﻿using ProyectoFinal.http;
+using ProyectoFinal.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,11 @@ namespace ProyectoFinal.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddContentToForum : ContentPage
     {
+        private APIService apiservice;
         public AddContentToForum()
         {
             InitializeComponent();
+            apiservice = new APIService();
         }
 
         private async void post_Clicked(object sender, EventArgs e)
@@ -28,19 +31,23 @@ namespace ProyectoFinal.views
             else
             {
                 AddNewForumContent();
+                await Navigation.PopAsync();
             }
+            
         }
 
         async void AddNewForumContent()
         {
-            await App.Database.CreateForumPage(new ForumContent
+            var content = new ForumContent
             {
+                Id = Guid.NewGuid(),
+                UserId = Guid.NewGuid(),
                 Title = forumTitle.Text,
-                Content = forumContent.Text,
-                User = "local:user",
-                Date = DateTime.Now
-            });
-            await Navigation.PopAsync();
-        }
+                user = "usuarioLocal",
+                Date = DateTime.Now,
+                Content = forumContent.Text
+            };
+            await apiservice.PostForum(content);
+        }        
     }
 }

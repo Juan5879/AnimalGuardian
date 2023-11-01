@@ -22,7 +22,7 @@ namespace ProyectoFinal.views
 		}
         protected override async void OnAppearing()
         {
-            List<WikiData> wikiAnimals = await apiservice.GetWikisAnimalAsync();
+            var wikiAnimals = await apiservice.GetWikisAnimalAsync();
             lstWiki.ItemsSource = wikiAnimals;
             OnPropertyChanged(nameof(lstWiki.ItemsSource));
         }

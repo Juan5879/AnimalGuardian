@@ -7,10 +7,10 @@ namespace ProyectoFinal.model
 {
     public class ForumContent
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
         public string Title { get; set; }
-        public string User { get; set; }
+        public string user { get; set; }
         public DateTime Date { get; set; }
         public string Content { get; set; }
     }
