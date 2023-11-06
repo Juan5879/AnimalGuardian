@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.NotificationDetails">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="#C0C8D1">
             <StackLayout>
                 <Frame VerticalOptions="CenterAndExpand"
    HorizontalOptions="CenterAndExpand"

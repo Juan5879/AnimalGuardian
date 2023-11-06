@@ -40,5 +40,17 @@ namespace ProyectoFinal.views
         {
             await Navigation.PushAsync(new AddContentToForum());
         }
+
+        private async void lstForum_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
+
+            var selectedPost = (ForumContent)e.SelectedItem;
+
+            await Navigation.PushAsync(new PostDetails(selectedPost));
+
+            lstForum.SelectedItem = null;
+        }
     }
 }

@@ -4,7 +4,7 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ProyectoFinal.views.UserPage">
     <ContentPage.Content>
-        <AbsoluteLayout BackgroundColor="#A3DDAA">
+        <AbsoluteLayout BackgroundColor="#C0C8D1">
             <StackLayout>
                 <Grid Padding="10">
                     <Grid.RowDefinitions>
@@ -23,9 +23,7 @@
                         <Frame
                     CornerRadius="100"
                     VerticalOptions="Start">
-                            <Image
-                        Source="usuario.png">
-                            </Image>
+                            <Image x:Name="selectedImage"/>
                         </Frame>
                         <StackLayout HorizontalOptions="Center"
                              Grid.Row="1">
@@ -38,6 +36,8 @@
                 </Grid>
                 <Button x:Name="login" Clicked="login_Clicked" Text="navega al Login (requiere API)"/>
                 <Button x:Name="notification" Clicked="notification_Clicked" Text="Envíar notificación de prueba (no requiere API)"/>
+                <Button x:Name="TakePickFromgallery" Clicked="TakePickFromgallery_Clicked" Text="Tomar imagen desde galería (NF)"/>
+                <Button x:Name="TakePickFromCamera" Clicked="TakePickFromCamera_Clicked" Text="Tomar imagen con la cámara (NF)"/>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

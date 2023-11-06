@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.WikiAnimal">
     <ContentPage.Content>
-        <AbsoluteLayout BackgroundColor="#A3DDAA">
+        <AbsoluteLayout BackgroundColor="#C0C8D1">
 
             <StackLayout Padding="0, 0, 0, 10">
                 <Frame Padding="0" 

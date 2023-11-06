@@ -62,7 +62,7 @@ namespace ProyectoFinal
                     MainPage = new NavigationPage(new Login());
                 }
             }*/
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnSleep()

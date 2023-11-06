@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.IO;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plugin.LocalNotifications;
@@ -57,6 +59,31 @@ namespace ProyectoFinal.views
         private void notification_Clicked(object sender, EventArgs e)
         {
             CrossLocalNotifications.Current.Show("AnimalGuardian", "Notificación", 0, DateTime.Now.AddSeconds(2));
+        }
+
+        private async void TakePickFromgallery_Clicked(object sender, EventArgs e)
+        {
+            var photo = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+            {
+                Title = "Seleccionar imagen"
+            });
+
+            if (photo != null)
+            {
+
+            }
+        }
+
+        private async void TakePickFromCamera_Clicked(object sender, EventArgs e)
+        {
+            var photo = await MediaPicker.CapturePhotoAsync(new MediaPickerOptions
+            {
+                Title = "Tomar foto"
+            });
+
+            if (photo != null)
+            {
+            }
         }
     }
 }
