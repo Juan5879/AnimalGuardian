@@ -9,13 +9,15 @@ using Newtonsoft.Json;
 using ProyectoFinal.model;
 using System.Security;
 using Xamarin.Essentials;
+using Xamarin.Forms.Xaml;
+using Xamarin.Forms;
 
 namespace ProyectoFinal.http
 {
     internal class APIService
     {
         private readonly HttpClient _httpClient;
-        private const string ApiBaseUrl = "https://5b22-38-51-89-131.ngrok-free.app/api";
+        private const string ApiBaseUrl = "https://a8fc-38-51-89-131.ngrok-free.app/api";
 
         string error;
         string errorDetalles;
@@ -80,6 +82,50 @@ namespace ProyectoFinal.http
                 return null;
             }
         }
+        public async Task<User> GetUserByEmail(string Email)
+        {
+            var response = await _httpClient.GetAsync($"{ApiBaseUrl}/user/GetUserByEmail?email={Email}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var userData = JsonConvert.DeserializeObject<User>(json);
+                return new User
+                {
+                    IdUser = userData.IdUser,
+                    Name = userData.Name,
+                    Email = userData.Email
+                };
+            }
+            else
+            {
+                return null; 
+            }
+        }
+
+        public async Task<bool> UpdateUserData(User user)
+        {
+            try
+            {
+                var jsonContent = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PutAsync($"{ApiBaseUrl}/user/{user.IdUser}", jsonContent);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+
 
         public async Task<UserAuthStatus> UserAuth(User userauth)
         {

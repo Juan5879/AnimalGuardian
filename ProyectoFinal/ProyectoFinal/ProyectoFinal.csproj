@@ -18,6 +18,7 @@
     <None Remove="views\AddNotificationPage.xaml" />
     <None Remove="views\AddPage.xaml" />
     <None Remove="views\AddPet.xaml" />
+    <None Remove="views\ChangePassword.xaml" />
     <None Remove="views\enclosurePet.xaml" />
     <None Remove="views\Forum.xaml" />
     <None Remove="views\Login.xaml" />
@@ -47,6 +48,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\AddPage.xaml" />
     <EmbeddedResource Include="views\AddPet.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ChangePassword.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="views\enclosurePet.xaml">

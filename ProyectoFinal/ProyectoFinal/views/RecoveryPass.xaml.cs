@@ -27,32 +27,48 @@ namespace ProyectoFinal.views
 
 
             var email = datauser.Text;
-            await DisplayAlert("Alerta", $"Email del receptor {email}", "ok");
-            var bodyBuilder = new BodyBuilder();
-
-            var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("AnimalGuardian", "mail@gmail.com"));
-            message.To.Add(new MailboxAddress("Usuario", email));
-            message.Subject = "Recuperar contraseña";
-
-
-            bodyBuilder.TextBody = $"Aqui tiene el código para recuperar su contraseña: {code}";
-
-            message.Body = bodyBuilder.ToMessageBody();
-
-            // Configurar el cliente SMTP
-            using (var client = new SmtpClient())
+            if (!String.IsNullOrEmpty(email))
             {
-                client.Connect("smtp.gmail.com", 587, false);
-                client.Authenticate("mail@gmail.com", "código de aplicación");
+                var bodyBuilder = new BodyBuilder();
 
-                // Enviar el correo
-                client.Send(message);
+                var emailAG = "email@gmail.com";
+                var passwordAplication = "código";
 
-                client.Disconnect(true);
+                var message = new MimeMessage();
+                message.From.Add(new MailboxAddress("AnimalGuardian", emailAG));
+                message.To.Add(new MailboxAddress("Usuario", email));
+                message.Subject = "Recuperar contraseña";
+
+
+                bodyBuilder.TextBody = $"Aqui tiene el código para recuperar su contraseña: {code}";
+
+                message.Body = bodyBuilder.ToMessageBody();
+
+                // Configurar el cliente SMTP
+                using (var client = new SmtpClient())
+                {
+                    client.Connect("smtp.gmail.com", 587, false);
+                    client.Authenticate(emailAG, passwordAplication);
+
+                    client.Send(message);
+
+                    client.Disconnect(true);
+                }
+
+                User user = new User
+                {
+                    Name = datauser.Text,
+                    Email = email,
+                    Password = null,
+                };
+
+                await Navigation.PushAsync(new ChangePassword(user, code));
+
             }
-
-            await Navigation.PushAsync(new AddPage());
+            else
+            {
+                await DisplayAlert("Alerta", "El campo de EmailEstá vacío", "Ok");
+            }
         }
     }
 }
