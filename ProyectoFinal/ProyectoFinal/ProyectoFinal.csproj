@@ -33,6 +33,7 @@
     <None Remove="views\Register.xaml" />
     <None Remove="views\UserPage.xaml" />
     <None Remove="views\WikiAnimal.xaml" />
+    <None Remove="views\WikiDetails.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -89,6 +90,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="views\WikiAnimal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\WikiDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

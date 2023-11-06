@@ -22,8 +22,6 @@ namespace ProyectoFinal.views
 
             apiservice = new APIService();
 
-            emailLabel.Text = user.Email;
-
             codeAuth = code;
             userData.Email = user.Email;
 

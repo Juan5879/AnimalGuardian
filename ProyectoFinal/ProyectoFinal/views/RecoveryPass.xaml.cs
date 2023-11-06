@@ -26,17 +26,17 @@ namespace ProyectoFinal.views
             int code = random.Next(100000, 999999);
 
 
-            var email = datauser.Text;
-            if (!String.IsNullOrEmpty(email))
+            var emailUser = datauser.Text;
+            if (!String.IsNullOrEmpty(emailUser))
             {
                 var bodyBuilder = new BodyBuilder();
 
-                var emailAG = "email@gmail.com";
-                var passwordAplication = "código";
+                var emailAG = "email";
+                var passwordAplication = "clave de aplicación";
 
                 var message = new MimeMessage();
                 message.From.Add(new MailboxAddress("AnimalGuardian", emailAG));
-                message.To.Add(new MailboxAddress("Usuario", email));
+                message.To.Add(new MailboxAddress("Usuario", emailUser));
                 message.Subject = "Recuperar contraseña";
 
 
@@ -58,7 +58,7 @@ namespace ProyectoFinal.views
                 User user = new User
                 {
                     Name = datauser.Text,
-                    Email = email,
+                    Email = emailUser,
                     Password = null,
                 };
 

@@ -30,5 +30,17 @@ namespace ProyectoFinal.views
         {
             lstWiki.ItemsSource = await App.Database.SearchWiki(e.NewTextValue);
         }
+
+        private async void lstWiki_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
+
+            var selectedWiki = (WikiData)e.SelectedItem;
+
+            await Navigation.PushAsync(new WikiDetails(selectedWiki));
+
+            lstWiki.SelectedItem = null;
+        }
     }
 }

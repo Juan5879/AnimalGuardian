@@ -17,7 +17,8 @@
                 </Frame>
                 <ListView x:Name="lstWiki"
                           HasUnevenRows="True"
-                          HeightRequest="550">
+                          HeightRequest="550"
+                          ItemSelected="lstWiki_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
