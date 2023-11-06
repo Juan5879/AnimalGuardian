@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:d="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:ProyectoFinal.views"
+            mc:Ignorable="d"
+            x:Class="ProyectoFinal.views.MainPage"
+            BarTextColor="Black"
+            BarBackgroundColor="#95a306"
+            SelectedTabColor="White"
+            UnselectedTabColor="Black">
+
+    <local:Forum Title="Foro" IconImageSource="ts2.png"/>
+    <local:WikiAnimal Title="Animales" IconImageSource="arana.png"/>
+    <local:enclosurePet Title="Recinto" IconImageSource="arana.png"/>
+    <local:NotificationPage Title="Notificaciones" IconImageSource="notificacioncampana.png"/>
+    <local:UserPage Title="Usuario" IconImageSource="usuario.png"/>
+</TabbedPage>

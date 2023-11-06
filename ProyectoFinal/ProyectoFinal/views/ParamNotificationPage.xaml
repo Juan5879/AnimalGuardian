@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.ParamNotificationPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#A3DDAA">
+            <StackLayout>
+                <Frame VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               Margin="5"
+               BackgroundColor="Black"
+               Opacity="0.8"
+               CornerRadius="15">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Mascota:"
+                       FontAttributes="Bold"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       HorizontalOptions="EndAndExpand"/>
+                        <Label x:Name="petName"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       HorizontalOptions="StartAndExpand"/>
+                        <Label Text="Hora de la alerta:"
+                       FontAttributes="Bold"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="1"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="EndAndExpand"/>
+                        <TimePicker x:Name="TimeEntry"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="2"
+                            HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="Motivo de la notificación"
+                       FontAttributes="Bold"
+                       Grid.Row="3"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="EndAndExpand"
+                       VerticalOptions="EndAndExpand"/>
+                        <Entry x:Name="description"
+                       Placeholder="Texto..."
+                       Grid.Row="4"
+                       Grid.RowSpan="2"
+                       Grid.ColumnSpan="4"
+                       VerticalOptions="StartAndExpand"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+            <Button Text="Crear alerta"
+            VerticalOptions="EndAndExpand"
+            BackgroundColor="White"
+            TextColor="Black"
+            CornerRadius="15"
+            x:Name="CreateNotification"
+            Clicked="CreateNotification_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

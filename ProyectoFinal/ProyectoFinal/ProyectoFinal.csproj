@@ -1,0 +1,117 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="App.xaml" />
+    <None Remove="views\AddContentToForum.xaml" />
+    <None Remove="views\AddForumContent.xaml" />
+    <None Remove="views\AddNotificationPage.xaml" />
+    <None Remove="views\AddPage.xaml" />
+    <None Remove="views\AddPet.xaml" />
+    <None Remove="views\enclosurePet.xaml" />
+    <None Remove="views\Forum.xaml" />
+    <None Remove="views\Login.xaml" />
+    <None Remove="views\MainPage.xaml" />
+    <None Remove="views\NotificationDetails.xaml" />
+    <None Remove="views\NotificationPage.xaml" />
+    <None Remove="views\ParamNotificationPage.xaml" />
+    <None Remove="views\PetDetails.xaml" />
+    <None Remove="views\PetView.xaml" />
+    <None Remove="views\RecoveryPass.xaml" />
+    <None Remove="views\Register.xaml" />
+    <None Remove="views\UserPage.xaml" />
+    <None Remove="views\WikiAnimal.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <ApplicationDefinition Include="views\AddForumContent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </ApplicationDefinition>
+    <EmbeddedResource Include="views\AddContentToForum.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\AddNotificationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\AddPage.xaml" />
+    <EmbeddedResource Include="views\AddPet.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\enclosurePet.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Forum.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\NotificationDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\NotificationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ParamNotificationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\PetDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\PetView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\RecoveryPass.xaml" />
+    <EmbeddedResource Include="views\Register.xaml" />
+    <EmbeddedResource Include="views\UserPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\WikiAnimal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="7.0.0" />
+    <PackageReference Include="System.Threading" Version="4.3.0" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2612" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="views\AddPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\RecoveryPass.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\Register.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="data\" />
+  </ItemGroup>
+</Project>

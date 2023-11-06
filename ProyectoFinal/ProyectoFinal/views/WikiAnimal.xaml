@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.WikiAnimal">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#A3DDAA">
+
+            <StackLayout Padding="0, 0, 0, 10">
+                <Frame Padding="0" 
+                       CornerRadius="15"
+                       BackgroundColor="Gray"
+                       Margin="5, 5, 5, 0">
+                    <SearchBar Placeholder="Que está buscando..."
+                               PlaceholderColor="White"
+                               TextChanged="SearchBar_TextChanged"
+                               Keyboard="Chat"/>
+                </Frame>
+                <ListView x:Name="lstWiki"
+                          HasUnevenRows="True"
+                          HeightRequest="550">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Frame CornerRadius="30"
+                                           Padding="0"
+                                           Margin="5, 5">
+                                        <Grid Padding="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="22"/>
+                                                <RowDefinition Height="19"/>
+                                                <RowDefinition Height="19"/>
+                                                <RowDefinition Height="19"/>
+                                                <RowDefinition Height="19"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="70"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Frame Grid.RowSpan="3"
+                                                   CornerRadius="50"
+                                                   WidthRequest="100"
+                                                   HeightRequest="100"
+                                                   HasShadow="False"
+                                                   Padding="0">
+                                                <Image Source="{Binding Image}"
+                                                       Aspect="AspectFill"
+                                                       WidthRequest="100"
+                                                       HeightRequest="100"/>
+                                            </Frame>
+                                            <Label Text="{Binding Name}"
+                                                   LineBreakMode="WordWrap"
+                                                   TextColor="Black"
+                                                   FontSize="17"
+                                                   FontAttributes="Bold"
+                                                   Grid.Column="1"/>
+                                            <Label Text="{Binding Species}"
+                                                   FontAttributes="Italic"
+                                                   LineBreakMode="WordWrap"
+                                                   HeightRequest="85"
+                                                   TextColor="Black"
+                                                   Grid.Row="1"
+                                                   Grid.Column="1"/>
+                                            <Label Text="{Binding Curiosities}"
+                                                   TextColor="Black"
+                                                   Grid.Row="3"
+                                                   Grid.RowSpan="2"
+                                                   Grid.ColumnSpan="2"/>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

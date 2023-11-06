@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.NotificationPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#A3DDAA">
+            <StackLayout>
+                <ListView RowHeight="90"
+                  x:Name="lstNotification"
+                  ItemSelected="lstNotification_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Frame CornerRadius="30"
+                                   Padding="0"
+                                   Margin="5, 5">
+                                        <Grid Padding="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="70"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding PetName}"
+                                           FontAttributes="Bold"
+                                           LineBreakMode="WordWrap"
+                                           TextColor="Black"
+                                           FontSize="17"
+                                           Grid.Column="1"
+                                           Grid.ColumnSpan="2"/>
+                                            <Label Text="{Binding Time}"
+                                           FontAttributes="Bold"
+                                           Grid.Column="2"
+                                           Grid.Row="0"
+                                           HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Description}"
+                                           FontAttributes="Italic"
+                                           LineBreakMode="WordWrap"
+                                           TextColor="Black"
+                                           Grid.Row="1"
+                                           Grid.Column="1" Grid.ColumnSpan="2"/>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button Text="Agregar recordatorio"
+            VerticalOptions="EndAndExpand"
+            BackgroundColor="White"
+            TextColor="Black"
+            CornerRadius="15"
+            x:Name="CreateNotification"
+            Clicked="CreateNotification_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

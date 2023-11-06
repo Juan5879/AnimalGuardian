@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="ProyectoFinal.views.UserPage">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#A3DDAA">
+            <StackLayout>
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout HorizontalOptions="Center" 
+                         Grid.ColumnSpan="2"
+                         Grid.Column="1">
+                        <Frame
+                    CornerRadius="100"
+                    VerticalOptions="Start">
+                            <Image
+                        Source="usuario.png">
+                            </Image>
+                        </Frame>
+                        <StackLayout HorizontalOptions="Center"
+                             Grid.Row="1">
+                            <Label Text="User"
+                           HorizontalOptions="Center"
+                           TextColor="Black"
+                           FontSize="20"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                <Button x:Name="login" Clicked="login_Clicked" Text="navega al Login (requiere API)"/>
+                <Button x:Name="notification" Clicked="notification_Clicked" Text="Envíar notificación de prueba (no requiere API)"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
