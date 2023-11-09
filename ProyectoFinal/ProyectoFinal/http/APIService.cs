@@ -17,7 +17,7 @@ namespace ProyectoFinal.http
     internal class APIService
     {
         private readonly HttpClient _httpClient;
-        private const string ApiBaseUrl = "https://a8fc-38-51-89-131.ngrok-free.app/api";
+        private const string ApiBaseUrl = "https://6455-38-51-89-155.ngrok-free.app/api";
 
         string error;
         string errorDetalles;

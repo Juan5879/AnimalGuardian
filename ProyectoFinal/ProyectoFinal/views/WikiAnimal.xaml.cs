@@ -26,10 +26,17 @@ namespace ProyectoFinal.views
             lstWiki.ItemsSource = wikiAnimals;
             OnPropertyChanged(nameof(lstWiki.ItemsSource));
         }
-        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs searchBar)
         {
-            lstWiki.ItemsSource = await App.Database.SearchWiki(e.NewTextValue);
+            var wikiAnimals = await apiservice.GetWikisAnimalAsync();
+
+            string searchText = searchBar.NewTextValue.ToLower();
+
+            var filteredWikiAnimals = wikiAnimals.Where(animal => animal.Name.ToLower().Contains(searchText) || animal.GeographicalDistribution.ToLower().Contains(searchText) || animal.Species.ToLower().Contains(searchText)).ToList();
+
+            lstWiki.ItemsSource = filteredWikiAnimals;
         }
+
 
         private async void lstWiki_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {

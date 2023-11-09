@@ -33,7 +33,10 @@ namespace ProyectoFinal.views
 
         private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lstForum.ItemsSource = await App.Database.SearchForum(e.NewTextValue);
+            var forumdata = await apiservice.GetForumContent();
+            string searchText = e.NewTextValue.ToLower();
+            var filteredPost = forumdata.Where(post => post.user.Contains(searchText) || post.Title.Contains(searchText) || post.Content.Contains(searchText)).ToList();
+            lstForum.ItemsSource = filteredPost;
         }
 
         private async void CreateForumContent_Clicked(object sender, EventArgs e)

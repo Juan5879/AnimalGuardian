@@ -31,8 +31,8 @@ namespace ProyectoFinal.views
             {
                 var bodyBuilder = new BodyBuilder();
 
-                var emailAG = "email";
-                var passwordAplication = "clave de aplicación";
+                var emailAG = "Juan5879.2005@gmail.com";
+                var passwordAplication = "fbul xewh ljhz bzrx";
 
                 var message = new MimeMessage();
                 message.From.Add(new MailboxAddress("AnimalGuardian", emailAG));
