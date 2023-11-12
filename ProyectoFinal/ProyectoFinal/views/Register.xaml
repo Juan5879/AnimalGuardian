@@ -3,16 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.Register">
     <ContentPage.Content>
-        <AbsoluteLayout BackgroundColor="#C0C8D1">
-            <Image Source="geckonaranja.jpg" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill" />
-            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 1" AbsoluteLayout.LayoutFlags="All" Padding="9" BackgroundColor="#B3000000">
-                <Label Text="Iniciar Sesion" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Entry x:Name="user" Placeholder="Usuario"/>
-                <Entry x:Name="email" Placeholder="Correo electronico"/>
-                <Entry x:Name="password" Placeholder="Contraseña" IsPassword="False"/>
-                <Entry x:Name="passwordrepeat" Placeholder="Repetir contraseña" IsPassword="False"/>
-                <Button x:Name="btn_sendata" Text="Registrarse" Clicked="Btn_sendata"/>
-            </StackLayout>
-        </AbsoluteLayout>
+        <Grid BackgroundColor="#E4F4F1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Animal Guardian" TextColor="#2A5D50"  FontAttributes="Bold" FontSize="35" Grid.ColumnSpan="6" VerticalOptions="End" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Regístrate Ahora y Descubre un Mundo de Maravillas Animales" Grid.ColumnSpan="6" Grid.Row="1" TextColor="#2A5D50" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" Padding="10, 0, 10, 0"/>
+            <Frame Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="2" CornerRadius="30" BackgroundColor="#91D6BD" VerticalOptions="Center">
+                <StackLayout Padding="9">
+                    <Label Text="Registrarse" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20"/>
+                    <Entry x:Name="user" Placeholder="Usuario"/>
+                    <Entry x:Name="email" Placeholder="Correo electronico"/>
+                    <Entry x:Name="password" Placeholder="Contraseña" IsPassword="False"/>
+                    <Entry x:Name="passwordrepeat" Placeholder="Repetir contraseña" IsPassword="False"/>
+                    <Button x:Name="btn_sendata" Text="Registrarse" Clicked="Btn_sendata" BackgroundColor="#BEE290" CornerRadius="30"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

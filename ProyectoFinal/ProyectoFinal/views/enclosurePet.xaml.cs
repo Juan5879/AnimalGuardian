@@ -9,7 +9,6 @@ using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ProyectoFinal.model;
-using Xamarin.Essentials;
 
 namespace ProyectoFinal.views
 {

@@ -10,6 +10,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using ProyectoFinal.http;
 using Xamarin.Essentials;
+using System.Xml.Linq;
 
 namespace ProyectoFinal
 {
@@ -17,6 +18,7 @@ namespace ProyectoFinal
     {
 
         private static SQLiteHelper db;
+        private APIService apiservice;
         public static SQLiteHelper Database
         {
             get
@@ -34,43 +36,22 @@ namespace ProyectoFinal
             InitializeComponent();
         }
 
-        protected override async void OnStart()
+        protected async override void OnStart()
         {
             base.OnStart();
 
-            //string usuarioAlmacenado = await SecureStorage.GetAsync("Usuario");
-            //string contraseñaAlmacenada = await SecureStorage.GetAsync("Contraseña");
-            /*
-            if (!string.IsNullOrEmpty(usuarioAlmacenado) && !string.IsNullOrEmpty(contraseñaAlmacenada))
-            {
-                UserData userAuth = new UserData
-                {
-                    Name = usuarioAlmacenado,
-                    Password = contraseñaAlmacenada,
-                    Email = usuarioAlmacenado
-                };
+            MainPage = new NavigationPage(new Login());
 
-                var BodyConfirmation = await apiservice.UserAuth(userAuth);
-                var confirmation = BodyConfirmation.status;
-
-                if (confirmation == true)
-                {
-                    MainPage = new NavigationPage(new MainPage());
-                }
-                else
-                {
-                    MainPage = new NavigationPage(new Login());
-                }
-            }*/
-            MainPage = new NavigationPage(new MainPage());
         }
-
+    
         protected override void OnSleep()
         {
+
         }
 
         protected override void OnResume()
         {
+
         }
 
     }

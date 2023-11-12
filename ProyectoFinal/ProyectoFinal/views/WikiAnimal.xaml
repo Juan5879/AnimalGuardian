@@ -3,16 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.WikiAnimal">
     <ContentPage.Content>
-        <AbsoluteLayout BackgroundColor="#C0C8D1">
+        <AbsoluteLayout BackgroundColor="#E4F4F1">
 
             <StackLayout Padding="0, 0, 0, 10">
                 <Frame Padding="0" 
-                       CornerRadius="15"
-                       BackgroundColor="Gray"
-                       Margin="5, 5, 5, 0">
+                       CornerRadius="30"
+                       Margin="5, 5, 5, 10">
                     <SearchBar Placeholder="Que está buscando..."
-                               PlaceholderColor="White"
                                TextChanged="SearchBar_TextChanged"
+                               BackgroundColor="#64B48F"
                                Keyboard="Chat"/>
                 </Frame>
                 <ListView x:Name="lstWiki"
@@ -25,7 +24,9 @@
                                 <ViewCell.View>
                                     <Frame CornerRadius="30"
                                            Padding="0"
-                                           Margin="5, 5">
+                                           Margin="5, 5"
+                                           BackgroundColor="#BEE290"
+                                           BorderColor="#7CA249">
                                         <Grid Padding="10">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="22"/>

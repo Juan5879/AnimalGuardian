@@ -16,24 +16,29 @@ namespace ProyectoFinal.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserPage : ContentPage
     {
-        public string UserName { get; set; } 
+        public string userName { get; set; }
+        User userdata { get; set; }
 
         public UserPage()
         {
-            InitializeComponent();
+            userdata = new User
+            {
+                Name = Application.Current.Properties.ContainsKey("Usuario") ? (string)Application.Current.Properties["Usuario"] : string.Empty,
+                Email = Application.Current.Properties.ContainsKey("Email") ? (string)Application.Current.Properties["Email"] : string.Empty,
+                Password = Application.Current.Properties.ContainsKey("Contraseña") ? (string)Application.Current.Properties["Contraseña"] : string.Empty
+            };
+
+            userName = userdata.Name;
+            
             BindingContext = this;
+
+            InitializeComponent();
         }
+
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
-            User userData = await App.Database.GetUserById(1);
-
-            if (userData != null)
-            {
-                UserName = userData.Name;
-            }
         }
 
         private async void btn_nav_config_Clicked(object sender, EventArgs e)
@@ -53,6 +58,9 @@ namespace ProyectoFinal.views
 
         private async void login_Clicked(object sender, EventArgs e)
         {
+            Application.Current.Properties["Usuario"] = null;
+            Application.Current.Properties["Contraseña"] = null;
+
             await Navigation.PushAsync(new Login());
         }
 
@@ -61,29 +69,9 @@ namespace ProyectoFinal.views
             CrossLocalNotifications.Current.Show("AnimalGuardian", "Notificación", 0, DateTime.Now.AddSeconds(2));
         }
 
-        private async void TakePickFromgallery_Clicked(object sender, EventArgs e)
+        private async void config_Clicked(object sender, EventArgs e)
         {
-            var photo = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
-            {
-                Title = "Seleccionar imagen"
-            });
-
-            if (photo != null)
-            {
-
-            }
-        }
-
-        private async void TakePickFromCamera_Clicked(object sender, EventArgs e)
-        {
-            var photo = await MediaPicker.CapturePhotoAsync(new MediaPickerOptions
-            {
-                Title = "Tomar foto"
-            });
-
-            if (photo != null)
-            {
-            }
+            await Navigation.PushAsync(new AccountDetails(userdata));
         }
     }
 }

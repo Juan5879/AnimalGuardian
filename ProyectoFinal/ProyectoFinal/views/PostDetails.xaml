@@ -3,15 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.PostDetails">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#C0C8D1"
+        <StackLayout BackgroundColor="#E4F4F1"
                      Padding="10">
-            <Frame BackgroundColor="#86956F"
+            <Frame BackgroundColor="#64B48F"
                    CornerRadius="30"
                    Padding="10"
                    HorizontalOptions="StartAndExpand">
-                <Label x:Name="Title" Text="pancho" FontSize="20" TextColor="Black" />
+                <Label x:Name="Title" Text="pancho" FontAttributes="Bold" FontSize="20" TextColor="Black" />
             </Frame>
-            <Frame BackgroundColor="#3D6827"
+            <Frame BackgroundColor="#BEE290"
+                   BorderColor="#7CA249"
                    Padding="10"
                    CornerRadius="30">
                 <Grid>
@@ -23,18 +24,22 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label x:Name="Content"
-                           Text="ñflksjñflksdjñflksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudf"
-                           Grid.ColumnSpan="2"/>
+                    <ScrollView Grid.ColumnSpan="2">
+                        <Label x:Name="Content"
+                               Text="ñflksjñflksdjñflksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudfksjdñklfjñsdlkfjñskldjfynyeroiwuvtyoewruivtoewuiyvtevsfhdvñlskdjhfgpwov8egbkalsjbfgñivyugñdilvfbgñduifbngvdfiognvbudfigvnudf"
+                               TextColor="Black"/>
+                    </ScrollView>
                     <Label x:Name="User" Text="Juan5879"
                            Grid.Column="1"
                            Grid.Row="1"
                            HorizontalOptions="EndAndExpand"
-                           FontAttributes="Bold"/>
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
                     <Label x:Name="Date"
                            Text="2023-11-06 04:36:00"
                            Grid.Row="1"
-                           FontAttributes="Bold"/>
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
                 </Grid>
             </Frame>
             

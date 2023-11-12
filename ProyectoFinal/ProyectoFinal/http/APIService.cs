@@ -11,13 +11,14 @@ using System.Security;
 using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms;
+using Org.BouncyCastle.Bcpg;
 
 namespace ProyectoFinal.http
 {
     internal class APIService
     {
         private readonly HttpClient _httpClient;
-        private const string ApiBaseUrl = "https://6455-38-51-89-155.ngrok-free.app/api";
+        private const string ApiBaseUrl = "https://13bc-38-51-89-155.ngrok-free.app/api";
 
         string error;
         string errorDetalles;
@@ -82,6 +83,28 @@ namespace ProyectoFinal.http
                 return null;
             }
         }
+
+        public async Task<User> GetUserByName(string Name)
+        {
+            var response = await _httpClient.GetAsync($"{ApiBaseUrl}/user/GetUserByName?name={Name}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var userData = JsonConvert.DeserializeObject<User>(json);
+                return new User
+                {
+                    IdUser = userData.IdUser,
+                    Name = userData.Name,
+                    Email = userData.Email
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public async Task<User> GetUserByEmail(string Email)
         {
             var response = await _httpClient.GetAsync($"{ApiBaseUrl}/user/GetUserByEmail?email={Email}");
@@ -125,7 +148,26 @@ namespace ProyectoFinal.http
             }
         }
 
+        public async Task<bool> CreateAuth(User user)
+        {
+            UserAuthStatus userauth = new UserAuthStatus { status = false };
 
+            var response = await _httpClient.GetAsync($"{ApiBaseUrl}/Auth/UserExist?user={user.Name}");
+            if (response.IsSuccessStatusCode)
+            {
+                var response1 = await _httpClient.GetAsync($"{ApiBaseUrl}/Auth/EmailExist?email={user.Email}");
+                if (response1.IsSuccessStatusCode)
+                {
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    var jsonResponse1 = await response1.Content.ReadAsStringAsync();
+                    var nameExist = JsonConvert.DeserializeObject<UserAuthStatus>(jsonResponse).status;
+                    var emailExist = JsonConvert.DeserializeObject<UserAuthStatus>(jsonResponse1).status;
+                    if (nameExist == false && emailExist == false) { return true; } else { return false; }
+                }
+                else { return false; }
+            }
+            else { return false; }
+        }
 
         public async Task<UserAuthStatus> UserAuth(User userauth)
         {

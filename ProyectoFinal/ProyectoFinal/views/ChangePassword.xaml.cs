@@ -61,9 +61,6 @@ namespace ProyectoFinal.views
                     {
                         await DisplayAlert("Error", "No se encontró el usuario", "Ok");
                     }
-
-
-                    
                 }
                 else
                 {

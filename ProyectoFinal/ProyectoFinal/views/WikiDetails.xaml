@@ -3,29 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.WikiDetails">
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#C0C8D1"
+        <ScrollView BackgroundColor="#E4F4F1"
                      Padding="10">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="75"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -39,13 +27,16 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Frame Grid.Column="0"
-                       Grid.RowSpan="4"
+                <Frame Grid.Row="1"
+                       Grid.RowSpan="2"
+                       Grid.Column="2"
+                       Grid.ColumnSpan="2"
                        Padding="0"
                        WidthRequest="100"
                        HeightRequest="100"
                        HasShadow="False"
-                       CornerRadius="30">
+                       CornerRadius="30"
+                       BorderColor="#7CA249">
                     <Image x:Name="URLimage"
                            Aspect="AspectFill"
                            WidthRequest="100"
@@ -55,166 +46,225 @@
                 <Label x:Name="Name" Text="Nombre"
                        LineBreakMode="WordWrap"
                        VerticalOptions="Start"
-                       Grid.Column="1"
+                       Grid.ColumnSpan="3"
                        FontAttributes="Bold"
-                       FontSize="25"
-                       Grid.ColumnSpan="3"/>
+                       TextColor="Black"
+                       FontSize="25"/>
+
                 <Label x:Name="ScientificName" Text="Nombre cientifico"
                        LineBreakMode="WordWrap"
-VerticalOptions="Start"
-                       Grid.Column="1"
+                       TextColor="Black"
+                       VerticalOptions="Start"
                        Grid.Row="1"
                        Grid.ColumnSpan="3"
                        FontAttributes="Italic"
                        FontSize="17"/>
-               
-                <Label x:Name="Species" Text="especie"
-                       LineBreakMode="WordWrap"
-                        HorizontalOptions="StartAndExpand"
-VerticalOptions="Start"
-                       Grid.Column="1"
-                       Grid.Row="2"
-                       Grid.ColumnSpan="3"
-                       FontAttributes="Italic"/>
-                <Label x:Name="SubSpecies" Text="Subespecie"
-                        HorizontalOptions="StartAndExpand"
-                       LineBreakMode="WordWrap"
-VerticalOptions="Start"
-                       Grid.Column="1"
-                       Grid.Row="3"
-                       Grid.ColumnSpan="3"
-                       FontAttributes="Italic"/>
-                
-                
-                <Label Text="Distribución geografica:"
-                        HorizontalOptions="StartAndExpand"
-                       LineBreakMode="WordWrap"
-VerticalOptions="Start"
-                       Grid.Row="4"
-                       Grid.ColumnSpan="3"
-                       FontAttributes="Bold"/>
-                <Label x:Name="GeographicalDistribution" Text="Distribución geografica"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.Row="5"
-                       Grid.ColumnSpan="3"/>
-                
-                
-                <Label Text="Habitad: "
-                        HorizontalOptions="StartAndExpand"
-                       Grid.ColumnSpan="3"
-                       FontAttributes="Bold"
-                       Grid.Row="6"/>
-                <Label x:Name="Habitat"
-                        HorizontalOptions="StartAndExpand"
-                       LineBreakMode="WordWrap"
-VerticalOptions="Start"
-                       Grid.ColumnSpan="2"
-                       Grid.Row="7"/>
-                
-                
-                <Label Text="Tamaño promedio: "
-                       FontAttributes="Bold"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="8"/>
-                <Label x:Name="AverageSizeWeight" Text="Tamaño promedio"
-                       LineBreakMode="WordWrap"
-                       VerticalOptions="Start"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.ColumnSpan="3"                       
-                       Grid.Row="9"/>
-                
-                
-                <Label Text="Comportamiento: "
-                       Grid.ColumnSpan="3"
-                        HorizontalOptions="StartAndExpand"
-                       FontAttributes="Bold"
-                       Grid.Row="10"/>
-                <Label x:Name="Behavior" Text="Behavior"
-                       LineBreakMode="WordWrap"
-VerticalOptions="Start"
-                       Grid.ColumnSpan="3"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.Row="11"/>
-                
-                
-                <Label Text="Tipo de reproducción: "
-                       Grid.ColumnSpan="3"
-                       FontAttributes="Bold"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.Row="12"/>
-                
-                <Label x:Name="Reproduction" Text="tipo de reproducción"
-                       LineBreakMode="WordWrap"
-                        HorizontalOptions="StartAndExpand"
-VerticalOptions="Start"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="13"/>
-                
-                
-                <Label Text="Dieta:"
-                       FontAttributes="Bold"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="14"/>
-                <Label x:Name="Diet" Text="Dieta"
-                        HorizontalOptions="StartAndExpand"
-                       LineBreakMode="WordWrap"
-VerticalOptions="Start"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="15"/>
-                
-                
-                <Label Text="Caracteristicas de su anatomía:"
-                        HorizontalOptions="StartAndExpand"
-                       FontAttributes="Bold"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="16"/>
-                <Label x:Name="AnatomyCharacteristics" Text="Caracterisitcas anatomicas"
-                       LineBreakMode="WordWrap"
-VerticalOptions="Start"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="17"/>
-                
-                
-                <Label Text="Estado de conservación: "
-                       FontAttributes="Bold"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="18"/>
-                <Label x:Name="StateConservation" Text="Estado de conservación"
-                       LineBreakMode="WordWrap"
-                        HorizontalOptions="StartAndExpand"
-VerticalOptions="Start"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="19"/>
-                
-                
-                <Label Text="Curiosidades: "
-                       Grid.ColumnSpan="3"
-                        HorizontalOptions="StartAndExpand"
-                       FontAttributes="Bold"
-                       Grid.Row="20"/>
-                <Label x:Name="Curiosities" Text="Curiosidades"
-                       LineBreakMode="WordWrap"
-VerticalOptions="Start"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="21"/>
-                
-                
-                <Label Text="Trucos para conservar: "
-                       Grid.ColumnSpan="3"
-                        HorizontalOptions="StartAndExpand"
-                       FontAttributes="Bold"
-                       Grid.Row="22"/>
-                <Label x:Name="ConservationThreats" Text="Trucos para conservar"
-                        HorizontalOptions="StartAndExpand"
-                       Grid.ColumnSpan="3"
-                       Grid.Row="23"/>
+
+                <Frame Grid.Row="3" Grid.ColumnSpan="4" BackgroundColor="#E3F4F1" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Especie: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label x:Name="Species" Text="especie"
+                           LineBreakMode="WordWrap"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Start"
+                           FontAttributes="Italic"
+                           TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="#D4ECE6" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="SubEspecie: " TextColor="Black" FontAttributes="Bold"/>
+                        <Label x:Name="SubSpecies" Text="Subespecie"
+                           HorizontalOptions="StartAndExpand"
+                           LineBreakMode="WordWrap"
+                           VerticalOptions="Start"
+                           Grid.Column="1"
+                           Grid.Row="3"
+                           Grid.ColumnSpan="3"
+                           FontAttributes="Italic"
+                           TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="5" Grid.ColumnSpan="4" BackgroundColor="#E3F4F1" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Distribución geografica:"
+                               HorizontalOptions="StartAndExpand"
+                               LineBreakMode="WordWrap"
+                               VerticalOptions="Start"
+                               Grid.Row="4"
+                               Grid.ColumnSpan="3"
+                               FontAttributes="Bold"
+                               TextColor="Black"/>
+                        <Label x:Name="GeographicalDistribution" Text="Distribución geografica"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.Row="5"
+                               Grid.ColumnSpan="3"
+                               TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="6" Grid.ColumnSpan="4" BackgroundColor="#D4ECE6" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Habitad: "
+                               HorizontalOptions="StartAndExpand"
+                               Grid.ColumnSpan="3"
+                               FontAttributes="Bold"
+                               Grid.Row="6"
+                               TextColor="Black"/>
+                        <Label x:Name="Habitat"
+                               HorizontalOptions="StartAndExpand"
+                               LineBreakMode="WordWrap"
+                               VerticalOptions="Start"
+                               Grid.ColumnSpan="2"
+                               Grid.Row="7"
+                               TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="7" Grid.ColumnSpan="4" BackgroundColor="#E3F4F1" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Tamaño promedio: "
+                               FontAttributes="Bold"
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="Black"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="8"/>
+                        <Label x:Name="AverageSizeWeight" Text="Tamaño promedio"
+                               LineBreakMode="WordWrap"
+                               VerticalOptions="Start"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.ColumnSpan="3"                       
+                               Grid.Row="9"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="8" Grid.ColumnSpan="4" BackgroundColor="#D4ECE6" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Comportamiento: "
+                               Grid.ColumnSpan="3"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               FontAttributes="Bold"
+                               Grid.Row="10"/>
+                        <Label x:Name="Behavior" Text="Behavior"
+                               LineBreakMode="WordWrap"
+                               VerticalOptions="Start"
+                               TextColor="Black"
+                               Grid.ColumnSpan="3"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.Row="11"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="9" Grid.ColumnSpan="4" BackgroundColor="#E3F4F1" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Tipo de reproducción: "
+                               Grid.ColumnSpan="3"
+                               FontAttributes="Bold"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.Row="12"/>
+                        <Label x:Name="Reproduction" Text="tipo de reproducción"
+                               LineBreakMode="WordWrap"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Start"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="13"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="10" Grid.ColumnSpan="4" BackgroundColor="#D4ECE6" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Dieta:"
+                               FontAttributes="Bold"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="14"/>
+                        <Label x:Name="Diet" Text="Dieta"
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="Black"
+                               LineBreakMode="WordWrap"
+                               VerticalOptions="Start"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="15"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="11" Grid.ColumnSpan="4" BackgroundColor="#E3F4F1" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Caracteristicas de su anatomía:"
+                               HorizontalOptions="StartAndExpand"
+                               FontAttributes="Bold"
+                               TextColor="Black"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="16"/>
+                        <Label x:Name="AnatomyCharacteristics" Text="Caracterisitcas anatomicas"
+                               LineBreakMode="WordWrap"
+                               TextColor="Black"
+                               VerticalOptions="Start"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="17"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="12" Grid.ColumnSpan="4" BackgroundColor="#D4ECE6" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Estado de conservación: "
+                               FontAttributes="Bold"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="18"/>
+                        <Label x:Name="StateConservation" Text="Estado de conservación"
+                               LineBreakMode="WordWrap"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Start"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="19"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="13" Grid.ColumnSpan="4" BackgroundColor="#E3F4F1" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Curiosidades: "
+                               Grid.ColumnSpan="3"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               FontAttributes="Bold"
+                               Grid.Row="20"/>
+                        <Label x:Name="Curiosities" Text="Curiosidades"
+                               LineBreakMode="WordWrap"
+                               TextColor="Black"
+                               VerticalOptions="Start"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="21"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="14" Grid.ColumnSpan="4" BackgroundColor="#D4ECE6" HasShadow="False">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Trucos para conservar: "
+                               Grid.ColumnSpan="3"
+                               TextColor="Black"
+                               HorizontalOptions="StartAndExpand"
+                               FontAttributes="Bold"
+                               Grid.Row="22"/>
+                        <Label x:Name="ConservationThreats" Text="Trucos para conservar"
+                               HorizontalOptions="StartAndExpand"
+                               Grid.ColumnSpan="3"
+                               TextColor="Black"
+                               Grid.Row="23"/>
+                    </StackLayout>
+                </Frame>
             </Grid>
-            
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

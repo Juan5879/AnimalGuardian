@@ -3,17 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.Forum">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#C0C8D1">
+        <StackLayout BackgroundColor="#E4F4F1">
             <Frame Grid.Column="0"
                    Padding="0"
-                   BackgroundColor="#7e611b"
-                   CornerRadius="30">
+                   CornerRadius="30"
+                   Margin="10, 5, 10, 10">
                 <SearchBar Placeholder="Busca temas de interes..."
                            TextChanged="SearchBar_TextChanged"
+                           BackgroundColor="#64B48F"
                            Keyboard="Chat"/>
             </Frame>
 
-            <StackLayout Padding="0, 0, 0, 10">
+            <StackLayout Padding="0">
                 <ListView x:Name="lstForum"
                           HasUnevenRows="True"
                           HeightRequest="550"
@@ -24,7 +25,9 @@
                                 <ViewCell.View>
                                     <Frame CornerRadius="30"
                                            Padding="0"
-                                           Margin="5, 5">
+                                           Margin="5, 5"
+                                           BackgroundColor="#BEE290"
+                                           BorderColor="#7CA249">
                                         <Grid Padding="10">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="40"/>
@@ -64,10 +67,12 @@
             </StackLayout>
             <Button Text="Publica!"
                     VerticalOptions="EndAndExpand"
-                    BackgroundColor="#3e2214"
-                    CornerRadius="15"
+                    BackgroundColor="#2A5D50"
+                    BorderColor="White"
+                    CornerRadius="30"
                     x:Name="CreateForumContent"
-                    Clicked="CreateForumContent_Clicked"/>
+                    Clicked="CreateForumContent_Clicked"
+                    Margin="5"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

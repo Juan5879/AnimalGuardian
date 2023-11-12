@@ -24,6 +24,7 @@ namespace ProyectoFinal.views
 
         private async void post_Clicked(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrWhiteSpace(forumTitle.Text) || string.IsNullOrWhiteSpace(forumContent.Text))
             {
                 await DisplayAlert("Datos invalidos", "Los campos están vacíos", "Ok");
@@ -38,12 +39,13 @@ namespace ProyectoFinal.views
 
         async void AddNewForumContent()
         {
+            var userNameSaved = Application.Current.Properties.ContainsKey("Usuario") ? (string)Application.Current.Properties["Usuario"] : string.Empty;
             var content = new ForumContent
             {
                 Id = Guid.NewGuid(),
                 UserId = Guid.NewGuid(),
                 Title = forumTitle.Text,
-                user = "usuarioLocal",
+                user = userNameSaved,
                 Date = DateTime.Now,
                 Content = forumContent.Text
             };

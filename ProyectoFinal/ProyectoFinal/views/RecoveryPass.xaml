@@ -3,13 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.RecoveryPass">
     <ContentPage.Content>
-        <AbsoluteLayout BackgroundColor="#C0C8D1">
-            <Image Source="mantisverde.png" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill" />
-            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.2" AbsoluteLayout.LayoutFlags="All" Padding="9" BackgroundColor="#B3000000">
-                <Label Text="Iniciar Sesion" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Entry x:Name="datauser" Placeholder="Correo electronico"/>
-                <Button x:Name="btn_sendata" Text="Recuperar Contraseña" Clicked="Btn_sendata"/>
-            </StackLayout>
-        </AbsoluteLayout>
+        <Grid BackgroundColor="#E4F4F1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Animal Guardian" TextColor="#2A5D50"  FontAttributes="Bold" FontSize="35" Grid.ColumnSpan="6" VerticalOptions="End" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="¿Olvidaste tu contraseña? Recupérala en un Paso y Vuelve a Cuidar a tus Compañeros Animales" Grid.ColumnSpan="6" Grid.Row="1" TextColor="#2A5D50" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center" Padding="10, 0, 10, 0"/>
+            <Frame Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="2" CornerRadius="30" BackgroundColor="#91D6BD" VerticalOptions="Start">
+                <StackLayout Padding="9">
+                    <Label Text="Recuperar Contraseña" TextColor="White" FontAttributes="Bold" FontSize="17" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Entry x:Name="datauser" Placeholder="Correo electronico"/>
+                    <Button x:Name="btn_sendata" Text="Recuperar Contraseña" Clicked="Btn_sendata" BackgroundColor="#BEE290" CornerRadius="30"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

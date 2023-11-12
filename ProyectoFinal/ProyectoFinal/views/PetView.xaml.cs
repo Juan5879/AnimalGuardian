@@ -13,8 +13,8 @@ namespace ProyectoFinal.views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PetView : ContentPage
 	{
-		model.pets _pet;
-		public PetView (model.pets pet)
+		pets _pet;
+		public PetView (pets pet)
 		{
 			InitializeComponent ();
 			Title = "Editar datos de mascota";

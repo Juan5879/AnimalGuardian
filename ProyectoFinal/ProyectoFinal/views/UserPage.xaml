@@ -4,11 +4,11 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="ProyectoFinal.views.UserPage">
     <ContentPage.Content>
-        <AbsoluteLayout BackgroundColor="#C0C8D1">
+        <AbsoluteLayout BackgroundColor="#E4F4F1" Padding="5">
             <StackLayout>
                 <Grid Padding="10">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -17,27 +17,30 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackLayout HorizontalOptions="Center" 
-                         Grid.ColumnSpan="2"
-                         Grid.Column="1">
-                        <Frame
-                    CornerRadius="100"
-                    VerticalOptions="Start">
-                            <Image x:Name="selectedImage"/>
+                    <Frame Grid.ColumnSpan="4"
+                           CornerRadius="50"
+                           WidthRequest="100"
+                           HeightRequest="100"
+                           HasShadow="False"
+                           Padding="0"
+                           HorizontalOptions="Center">
+                            <Image Source="usuario.png"
+                                   Aspect="AspectFill"
+                                   WidthRequest="100"
+                                   HeightRequest="100"/>
                         </Frame>
-                        <StackLayout HorizontalOptions="Center"
-                             Grid.Row="1">
-                            <Label Text="User"
-                           HorizontalOptions="Center"
-                           TextColor="Black"
-                           FontSize="20"/>
-                        </StackLayout>
-                    </StackLayout>
+
+                        <Label Text="{Binding userName}"
+                               HorizontalOptions="Center"
+                               TextColor="Black"
+                               FontSize="20"
+                               Grid.Row="1"
+                               Grid.ColumnSpan="2"
+                               Grid.Column="1"/>
+
                 </Grid>
-                <Button x:Name="login" Clicked="login_Clicked" Text="navega al Login (requiere API)"/>
-                <Button x:Name="notification" Clicked="notification_Clicked" Text="Envíar notificación de prueba (no requiere API)"/>
-                <Button x:Name="TakePickFromgallery" Clicked="TakePickFromgallery_Clicked" Text="Tomar imagen desde galería (NF)"/>
-                <Button x:Name="TakePickFromCamera" Clicked="TakePickFromCamera_Clicked" Text="Tomar imagen con la cámara (NF)"/>
+                <Button x:Name="login" Clicked="login_Clicked" Text="Cerrar Sesión" BackgroundColor="#2A5D50" CornerRadius="30"/>
+                <Button x:Name="config" Clicked="config_Clicked" Text="Ajustes de la cuenta" BackgroundColor="#2A5D50" CornerRadius="30"/>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

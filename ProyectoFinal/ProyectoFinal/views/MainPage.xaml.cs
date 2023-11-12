@@ -20,7 +20,6 @@ namespace ProyectoFinal.views
     public partial class MainPage : Xamarin.Forms.TabbedPage
     {
         private int paginactual = 0; 
-        private int totaldepaginas = 5; 
 
         public MainPage()
         {
@@ -30,7 +29,6 @@ namespace ProyectoFinal.views
             On<Android>().SetIsSmoothScrollEnabled(true); //habilita el desplazamiento suave en el TabbedPage. 
 
             this.Appearing += MainPage_move; //Cuando la página se muestra, se ejecuta el código dentro del método MainPage_move.
-            totaldepaginas = Children.Count; //Asigna el número total de páginas hijos del TabbedPage a la variable.
 
             NavigationPage.SetHasNavigationBar(this, false);
         }   

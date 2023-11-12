@@ -7,7 +7,7 @@
             mc:Ignorable="d"
             x:Class="ProyectoFinal.views.MainPage"
             BarTextColor="Black"
-            BarBackgroundColor="#95a306"
+            BarBackgroundColor="#64B48F"
             SelectedTabColor="White"
             UnselectedTabColor="Black">
 

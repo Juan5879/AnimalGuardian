@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.views.NotificationPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#C0C8D1">
+        <StackLayout BackgroundColor="#E4F4F1"
+                     Padding="5">
+            <Label Text="Notificaciones" FontSize="30" FontAttributes="Italic" TextColor="#2A5D50"/>
             <StackLayout>
                 <ListView RowHeight="90"
                   x:Name="lstNotification"
@@ -13,8 +15,10 @@
                             <ViewCell>
                                 <ViewCell.View>
                                     <Frame CornerRadius="30"
-                                   Padding="0"
-                                   Margin="5, 5">
+                                           Padding="0"
+                                           Margin="5, 5"
+                                           BackgroundColor="#BEE290"
+                                           BorderColor="#7CA249">
                                         <Grid Padding="10">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*"/>
@@ -53,12 +57,11 @@
                 </ListView>
             </StackLayout>
             <Button Text="Agregar recordatorio"
-            VerticalOptions="EndAndExpand"
-            BackgroundColor="White"
-            TextColor="Black"
-            CornerRadius="15"
-            x:Name="CreateNotification"
-            Clicked="CreateNotification_Clicked"/>
+                    VerticalOptions="EndAndExpand"
+                    BackgroundColor="#2A5D50"
+                    CornerRadius="30"
+                    x:Name="CreateNotification"
+                    Clicked="CreateNotification_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

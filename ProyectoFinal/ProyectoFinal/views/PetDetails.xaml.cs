@@ -20,14 +20,25 @@ namespace ProyectoFinal.views
         {
             InitializeComponent();
 
+            PetName = slectedPet.Name;
+
             petName.Text = slectedPet.Name;
             petDescription.Text = slectedPet.Description;
         }
 
         private async void edit_Clicked(object sender, EventArgs e)
         {
-            var pet = await GetPetData(PetName);
-            await Navigation.PushAsync(new PetView(pet));
+            await DisplayAlert("alerta", $"{PetName}", "ok");
+            try
+            {
+                var pet = await GetPetData(PetName);
+                await Navigation.PushAsync(new PetView(pet));
+            }
+            catch (Exception arg)
+            {
+                await DisplayAlert("error", $"{arg}", "ok");
+            }
+            
         }
 
         private async void delete_Clicked(object sender, EventArgs e)

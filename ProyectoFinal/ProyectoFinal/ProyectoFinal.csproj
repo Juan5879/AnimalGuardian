@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <None Remove="App.xaml" />
+    <None Remove="views\AccountDetails.xaml" />
     <None Remove="views\AddContentToForum.xaml" />
     <None Remove="views\AddForumContent.xaml" />
     <None Remove="views\AddNotificationPage.xaml" />
@@ -32,6 +33,7 @@
     <None Remove="views\RecoveryPass.xaml" />
     <None Remove="views\Register.xaml" />
     <None Remove="views\UserPage.xaml" />
+    <None Remove="views\VerifiUserData.xaml" />
     <None Remove="views\WikiAnimal.xaml" />
     <None Remove="views\WikiDetails.xaml" />
   </ItemGroup>
@@ -41,6 +43,9 @@
     <ApplicationDefinition Include="views\AddForumContent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </ApplicationDefinition>
+    <EmbeddedResource Include="views\AccountDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\AddContentToForum.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -89,6 +94,9 @@
     <EmbeddedResource Include="views\UserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\VerifiUserData.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\WikiAnimal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -98,7 +106,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.2.0" />
+    <PackageReference Include="MailKit" Version="4.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
@@ -107,9 +115,10 @@
     <PackageReference Include="System.Text.Encodings.Web" Version="7.0.0" />
     <PackageReference Include="System.Threading" Version="4.3.0" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2612" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ProyectoFinal.http;
@@ -32,8 +33,19 @@ namespace ProyectoFinal.views
                     Email = email.Text,
                     Password = password.Text
                 };
-                await apiservice.CreateUserAsync(newUser);
-                await Navigation.PopAsync();
+
+                bool userAuth = await apiservice.CreateAuth(newUser);
+
+                if (userAuth)
+                {
+                    await apiservice.CreateUserAsync(newUser);
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "El nombre de usuario o Email ya está en uso", "Ok");
+                }
+                
 
             }
             else
